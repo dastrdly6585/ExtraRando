@@ -1,0 +1,44 @@
+[
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Crossroads-Hot_Spring",
+        "sceneName": "Crossroads_30",
+        "flingType": "DirectDeposit",
+        "tags": null
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Colosseum-Hot_Spring",
+        "sceneName": "Room_Colosseum_02",
+        "flingType": "DirectDeposit",
+        "tags": null
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Deepnest-Hot_Spring",
+        "sceneName": "Deepnest_30",
+        "flingType": "DirectDeposit",
+        "tags": null
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Bathhouse-Hot_Spring",
+        "sceneName": "Ruins_Bathhouse",
+        "flingType": "DirectDeposit",
+        "tags": null
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Lower_Godhome-Hot_Spring",
+        "sceneName": "GG_Atrium",
+        "flingType": "DirectDeposit",
+        "tags": null
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+        "name": "Upper_Godhome-Hot_Spring",
+        "sceneName": "GG_Atrium_Roof",
+        "flingType": "DirectDeposit",
+        "tags": null
+    }
+]

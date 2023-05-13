@@ -1,0 +1,153 @@
+[
+    {
+        "$type": "ItemChanger.Items.IntItem, ItemChanger",
+        "fieldName": "simpleKeys",
+        "amount": 4,
+        "name": "Key_Ring",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Key ring"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "What kind of Donkey would leave this on the ground? Hehe..."
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "Keyring"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+        "isLeft": true,
+        "stages": 1,
+        "name": "Progressive_Left_Cloak",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Shadowdash"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO7",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_PRESS",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "DASH"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Progressive Left Cloak"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "This will express your dark side... get it?"
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Shadowdash"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+        "isLeft": false,
+        "stages": 1,
+        "name": "Progressive_Right_Cloak",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Shadowdash"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO7",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_PRESS",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "DASH"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Progressive Right Cloak"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "This will express your dark side... get it?"
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Shadowdash"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringItem, ExtraRando",
+        "name": "Hot_Spring_Water",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Hot Spring Water"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "You want a hot spring to go? Sure thing."
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "HotSpring"
+            }
+        },
+        "tags": [
+            {
+                "$type": "ItemChanger.Tags.PersistentItemTag, ItemChanger",
+                "Persistence": "SemiPersistent"
+            }
+        ],
+        "obtainState": "Unobtained"
+    }
+]
