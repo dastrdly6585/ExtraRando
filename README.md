@@ -35,7 +35,7 @@ Adds enhanced version of the 4 types of marker (which you can be from Iselda) to
 This will give you hints upon picking them up.
 
 - Scarab Marker: Tells you the location of a "junk" item. This mostly includes geo, maps and soul.
-- Gleaming Marker: Tells you the location of a potential useful iten. This mostly includes relics, (most) charms, mask shard, vessel fragments and keys. (Also nail upgrades, if the rando plus option is used)
+- Gleaming Marker: Tells you the location of a potential useful item. This mostly includes relics, (most) charms, mask shard, vessel fragments and keys. (Also nail upgrades, if the rando plus option is used)
 - Token Marker: Tells you the location of useful item. This includes all skills (besides nail arts), nail direction slashes, Dreamers, Kingsoul/Voidheart and Compass (obviously) or special custom items like the reading and listening ability (from Lore Rando), the "Key Ring" item or the Wallet and Dream Nail Fragment items (from Curse Rando)
 - Shell Marker: Tells you the **ITEM** of a random location.
 
@@ -45,7 +45,7 @@ The markers will be added to the "Map" pool.
 One of each marker is added, but for each 100 randomized items one of each type is additionally added.
 
 ## No Logic
-Removes all logic from the randomization process. This will greatly increase the setup time, but obviously could render some seeds **impossible**. It is recommended that some start items and duplicates are used.
+Removes all logic from the randomization process. This will greatly decrease the setup time, but obviously could render some seeds **impossible**. It is recommended that some start items and duplicates are used.
 
 Caution is especially advised if you choose to use "road blocking" connections like Lever Rando, More Doors and/or Breakable Wall Rando.
 
