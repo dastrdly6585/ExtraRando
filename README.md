@@ -35,7 +35,7 @@ Adds enhanced version of the 4 types of marker (which you can be from Iselda) to
 This will give you hints upon picking them up.
 
 - Scarab Marker: Tells you the location of a "junk" item. This mostly includes geo, maps and soul.
-- Gleamer Marker: Tells you the location of a potential useful iten. This mostly includes relics, (most) charms, mask shard, vessel fragments and keys. (Also nail upgrades, if the rando plus option is used)
+- Gleaming Marker: Tells you the location of a potential useful iten. This mostly includes relics, (most) charms, mask shard, vessel fragments and keys. (Also nail upgrades, if the rando plus option is used)
 - Token Marker: Tells you the location of useful item. This includes all skills (besides nail arts), nail direction slashes, Dreamers, Kingsoul/Voidheart and Compass (obviously) or special custom items like the reading and listening ability (from Lore Rando), the "Key Ring" item or the Wallet and Dream Nail Fragment items (from Curse Rando)
 - Shell Marker: Tells you the **ITEM** of a random location.
 
