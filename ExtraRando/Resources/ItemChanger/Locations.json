@@ -32,13 +32,61 @@
         "name": "Lower_Godhome-Hot_Spring",
         "sceneName": "GG_Atrium",
         "flingType": "DirectDeposit",
-        "tags": null
+        "tags": [
+            {
+                "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+                "Properties": {
+                    "ModSource": "ExtraRando",
+                    "PinSprite": {
+                        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                        "Key": "HotSpring"
+                    },
+                    "SceneNames": "GG_Waterways",
+                    "MapLocations": {
+                        "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+                        "$values": [
+                            {
+                                "Item1": "GG_Waterways",
+                                "Item2": -0.2,
+                                "Item3": 0.2
+                            }
+                        ]
+                    }
+                },
+                "Message": "RandoSupplementalMetadata",
+                "Loaded": true
+            }
+        ]
     },
     {
         "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
         "name": "Upper_Godhome-Hot_Spring",
         "sceneName": "GG_Atrium_Roof",
         "flingType": "DirectDeposit",
-        "tags": null
+        "tags": [
+            {
+                "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+                "Properties": {
+                    "ModSource": "ExtraRando",
+                    "PinSprite": {
+                        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                        "Key": "HotSpring"
+                    },
+                    "SceneNames": "GG_Waterways",
+                    "MapLocations": {
+                        "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+                        "$values": [
+                            {
+                                "Item1": "GG_Waterways",
+                                "Item2": -0.2,
+                                "Item3": 0.3
+                            }
+                        ]
+                    }
+                },
+                "Message": "RandoSupplementalMetadata",
+                "Loaded": true
+            }
+        ]
     }
 ]

@@ -1,11 +1,10 @@
 using ItemChanger;
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace ExtraRando.ModInterop.ItemChanger;
 
-internal class HotspringItem : AbstractItem
+public class HotspringItem : AbstractItem
 {
     #region Methods
 

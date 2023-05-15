@@ -12,9 +12,20 @@ public static class ItemManager
 
     #region Items
 
+    public const string Fireball_Spell = "Fireball_Spell";
+    public const string Dive_Spell = "Dive_Spell"; 
+    public const string Scream_Spell = "Scream_Spell";
+    public const string Left_Cloak = "Left_Cloak";
+    public const string Right_Cloak = "Right_Cloak";
+    public const string Cloak = "Cloak";
+    public const string Key_Ring = "Key_Ring";
     public const string Progressive_Left_Cloak = "Progressive_Left_Cloak";
     public const string Progressive_Right_Cloak = "Progressive_Right_Cloak";
     public const string Hot_Spring_Water = "Hot_Spring_Water";
+    public const string Scarab_Marker_Hint = "Scarab_Marker_Hint";
+    public const string Shell_Marker_Hint = "Shell_Marker_Hint";
+    public const string Gleaming_Marker_Hint = "Gleaming_Marker_Hint";
+    public const string Token_Marker_Hint = "Token_Marker_Hint";
 
     #endregion
 

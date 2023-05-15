@@ -55,4 +55,6 @@ public class SplitDashItem : AbstractItem
         ItemChangerMod.Modules.GetOrAdd(typeof(SplitCloak));
         ItemChangerMod.Modules.GetOrAdd(typeof(SplitShadeCloakModule));
     }
+
+    public override bool Redundant() => PlayerData.instance.GetBool(IsLeft ? "leftShadeDash" : "rightShadeDash");
 }

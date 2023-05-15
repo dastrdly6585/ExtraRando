@@ -1,5 +1,142 @@
 [
     {
+        "$type": "ItemChanger.Items.SpellItem, ItemChanger",
+        "fieldName": "screamLevel",
+        "spellLevel": 2,
+        "name": "Scream_Spell",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Scream2"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO3",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_TAP",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "QUICK_CAST"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SCREAM2_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SCREAM2_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Scream Spell"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Two for the price of one!"
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "Scream"
+            }
+        }
+    },
+    {
+        "$type": "ItemChanger.Items.SpellItem, ItemChanger",
+        "fieldName": "quakeLevel",
+        "spellLevel": 2,
+        "name": "Dive_Spell",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Dive2"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO3",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_TAP",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "QUICK_CAST"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Dive Spell"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Two for the price of one!"
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "Dive"
+            }
+        }
+    },
+    {
+        "$type": "ItemChanger.Items.SpellItem, ItemChanger",
+        "fieldName": "fireballLevel",
+        "spellLevel": 2,
+        "name": "Fireball_Spell",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Fireball2"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO3",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_TAP",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "QUICK_CAST"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_FIREBALL2_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_FIREBALL2_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Fireball Spell"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Two for the price of one!"
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "Fireball"
+            }
+        }
+    },
+    {
         "$type": "ItemChanger.Items.IntItem, ItemChanger",
         "fieldName": "simpleKeys",
         "amount": 4,
@@ -8,7 +145,7 @@
             "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
             "name": {
                 "$type": "ItemChanger.BoxedString, ItemChanger",
-                "Value": "Key ring"
+                "Value": "Key Ring"
             },
             "shopDesc": {
                 "$type": "ItemChanger.BoxedString, ItemChanger",
@@ -125,6 +262,161 @@
         "obtainState": "Unobtained"
     },
     {
+        "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+        "isLeft": true,
+        "stages": 2,
+        "name": "Left_Cloak",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Shadowdash"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO7",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_PRESS",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "DASH"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Left Cloak"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "This will express your dark side... get it?"
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Shadowdash"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+        "isLeft": false,
+        "stages": 2,
+        "name": "Right_Cloak",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Shadowdash"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO7",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_PRESS",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "DASH"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_SHADOWDASH_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Right Cloak"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "This will express your dark side... get it?"
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Shadowdash"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ItemChanger.Items.MultiBoolItem, ItemChanger",
+        "fieldNames": [
+            "hasDash",
+            "canDash",
+            "hasShadowDash",
+            "canShadowDash"
+        ],
+        "name": "Cloak",
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+            "bigSprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "Prompts.Dash"
+            },
+            "take": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_ITEM_INTRO1",
+                "sheet": "Prompts"
+            },
+            "press": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "BUTTON_DESC_PRESS",
+                "sheet": "Prompts"
+            },
+            "buttonSkin": {
+                "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+                "button": "DASH"
+            },
+            "descOne": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_DASH_1",
+                "sheet": "Prompts"
+            },
+            "descTwo": {
+                "$type": "ItemChanger.LanguageString, ItemChanger",
+                "key": "GET_DASH_2",
+                "sheet": "Prompts"
+            },
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Cloak"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Two for the price of one!"
+            },
+            "sprite": {
+                "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+                "Key": "Dash"
+            }
+        }
+    },
+    {
         "$type": "ExtraRando.ModInterop.ItemChanger.HotspringItem, ExtraRando",
         "name": "Hot_Spring_Water",
         "UIDef": {
@@ -148,6 +440,94 @@
                 "Persistence": "SemiPersistent"
             }
         ],
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+        "name": "Scarab_Marker_Hint",
+        "Type": 0,
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Scarab Marker"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Looking for some junk? No? Well this might help you, if you somehow changed your mind."
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Marker_B"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+        "name": "Shell_Marker_Hint",
+        "Type":  3,
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Shell Marker"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "You must believe in the heart of the ca... markers."
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Marker_R"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+        "name": "Gleaming_Marker_Hint",
+        "Type": 1,
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Gleaming Marker"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "This might be useful... or not. I don't care, I just want your money.'"
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Marker_W"
+            }
+        },
+        "tags": null,
+        "obtainState": "Unobtained"
+    },
+    {
+        "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+        "name": "Token_Marker_Hint",
+        "Type": 2,
+        "UIDef": {
+            "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+            "name": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "Token Marker"
+            },
+            "shopDesc": {
+                "$type": "ItemChanger.BoxedString, ItemChanger",
+                "Value": "You could call this \"Pay to win\", but let just say \"enhanced player experience\"."
+            },
+            "sprite": {
+                "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+                "key": "ShopIcons.Marker_Y"
+            }
+        },
+        "tags": null,
         "obtainState": "Unobtained"
     }
 ]

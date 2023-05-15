@@ -10,9 +10,9 @@ public class RandoSettings
 
     public bool RandomizeHotSprings { get; set; }
 
-    public bool RandomizeButt { get; set; }
+    //public bool RandomizeButt { get; set; }
 
-    public bool RandomizeDreamEntrances { get; set; }
+    public bool RandomizeMarkers { get; set; }
 
     public bool NoLogic { get; set; }
 }
