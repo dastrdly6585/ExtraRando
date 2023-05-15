@@ -92,6 +92,47 @@ public static class RandoInterop
             builder.AddItemByName(ItemManager.Shell_Marker_Hint, 1 + totalItems / 100);
             builder.AddItemByName(ItemManager.Gleaming_Marker_Hint, 1 + totalItems / 100);
             builder.AddItemByName(ItemManager.Token_Marker_Hint, 1 + totalItems / 100);
+
+            builder.EditItemRequest(ItemManager.Scarab_Marker_Hint, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    PriceCap = 50,
+                    Name = ItemManager.Scarab_Marker_Hint,
+                    Pool = "Map"
+                };
+            });
+            builder.EditItemRequest(ItemManager.Shell_Marker_Hint, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    PriceCap = 50,
+                    Name = ItemManager.Shell_Marker_Hint,
+                    Pool = "Map"
+                };
+            });
+            builder.EditItemRequest(ItemManager.Gleaming_Marker_Hint, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    PriceCap = 50,
+                    Name = ItemManager.Gleaming_Marker_Hint,
+                    Pool = "Map"
+                };
+            });
+            builder.EditItemRequest(ItemManager.Token_Marker_Hint, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    PriceCap = 50,
+                    Name = ItemManager.Token_Marker_Hint,
+                    Pool = "Map"
+                };
+            });
         }
     }
 
@@ -195,6 +236,16 @@ public static class RandoInterop
             {
                 builder.RemoveItemByName(ItemNames.Simple_Key);
                 builder.AddItemByName(ItemManager.Key_Ring);
+                builder.EditItemRequest(ItemManager.Key_Ring, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        PriceCap = 500,
+                        Name = ItemManager.Key_Ring,
+                        Pool = "Key"
+                    };
+                });
             }
 
             while (itemsToRemove.Any())
