@@ -189,6 +189,8 @@ public static class RandoInterop
             // If nail upgrades via RandoPlus are added, we remove one as well.
             if (availablePools.Any(x => x.Items.EnumerateDistinct().Contains("Nail_Upgrade")))
                 itemsToRemove.Add("Nail_Upgrade");
+            if (availablePools.Any(x => x.Items.EnumerateDistinct().Contains("Geo_Wallet")))
+                itemsToRemove.Add("Geo_Wallet");
             if (builder.gs.PoolSettings.Keys)
             {
                 builder.RemoveItemByName(ItemNames.Simple_Key);
