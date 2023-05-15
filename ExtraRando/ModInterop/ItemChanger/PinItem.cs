@@ -155,7 +155,13 @@ public class PinItem : AbstractItem
 
     #endregion
 
+    #region Properties
+
     public MarkerType Type { get; set; }
+
+    #endregion
+
+    #region Methods
 
     public override void GiveImmediate(GiveInfo info)
     {
@@ -175,7 +181,7 @@ public class PinItem : AbstractItem
             yield return null;
         if (HeroController.instance != null)
             try
-            { 
+            {
                 string hint;
                 if (Type == MarkerType.ShellMarker)
                 {
@@ -185,13 +191,13 @@ public class PinItem : AbstractItem
                     if (!viablePlacements.Any())
                         yield break;
                     AbstractPlacement selectedPlacement = viablePlacements[UnityEngine.Random.Range(0, viablePlacements.Count)];
-                    hint = string.Format("It whispers \"{0} is at {1}\".", selectedPlacement.Items.First(x => !x.IsObtained()).name.Replace("_", " ").Replace("-", " "), 
-                        selectedPlacement.Name.Replace("_", " ").Replace("-"," "));
+                    hint = string.Format("It whispers \"{0} is at {1}\".", selectedPlacement.Items.First(x => !x.IsObtained()).name.Replace("_", " ").Replace("-", " "),
+                        selectedPlacement.Name.Replace("_", " ").Replace("-", " "));
                 }
                 else
                 {
                     List<string> matchingLocations;
-                    matchingLocations = GetViableLocations((int)Type);
+                    matchingLocations = GetViableLocations();
                     if (!matchingLocations.Any())
                         yield break;
                     hint = string.Format("The marker whispers {0}.", matchingLocations[UnityEngine.Random.Range(0, matchingLocations.Count)]);
@@ -204,10 +210,10 @@ public class PinItem : AbstractItem
             }
     }
 
-    private List<string> GetViableLocations(int pinType)
+    private List<string> GetViableLocations()
     {
         List<string> viablePlacements = new();
-        if (pinType == 1)
+        if (Type == MarkerType.ScarabMarker)
             viablePlacements = Ref.Settings.Placements.Where(x =>
             {
                 if (x.Value.Items.Any(x => x.IsObtained()))
@@ -215,19 +221,25 @@ public class PinItem : AbstractItem
                 string name = x.Key;
                 if (_viableUselessItems.Contains(name))
                     return true;
-                return name.StartsWith("Geo_Rock") || name.StartsWith("Soul_Totem")
-                || name.EndsWith("_Map") || name.StartsWith("Lore_Tablet") || name.StartsWith("Journal_Entry")
-                || name.StartsWith("Hunter's_Notes") || name.StartsWith("Boss_Geo") || name.StartsWith("Geo_Chest");
+                foreach (AbstractItem item in x.Value.Items)
+                    if (item.name.StartsWith("Geo_Rock") || item.name.StartsWith("Soul_Totem")
+                        || item.name.EndsWith("_Map") || item.name.StartsWith("Lore_Tablet") || item.name.StartsWith("Journal_Entry")
+                        || item.name.StartsWith("Hunter's_Notes") || item.name.StartsWith("Boss_Geo") || item.name.StartsWith("Geo_Chest"))
+                        return true;
+
+                return false;
             }).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
             .ToList();
-        else if (pinType == 2)
-            viablePlacements = Ref.Settings.Placements.Where(x => !x.Value.Items.Any(x => x.IsObtained()) && _viablePotentialItems.Contains(x.Key))
-                .Select(x => x.Key.Replace("_", " ").Replace("-", " "))
-                .ToList();
+        else if (Type == MarkerType.GleamingMarker)
+            viablePlacements = Ref.Settings.Placements.Where(x => x.Value.Items.All(x => !x.IsObtained())
+            && x.Value.Items.Any(item => _viablePotentialItems.Contains(item.name))).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
+              .ToList();
         else
-            viablePlacements = Ref.Settings.Placements.Where(x => !x.Value.Items.Any(x => x.IsObtained()) && _viableUsefulItems.Contains(x.Key))
-                .Select(x => x.Key.Replace("_", " ").Replace("-", " "))
-                .ToList();
+            viablePlacements = Ref.Settings.Placements.Where(x => x.Value.Items.All(x => !x.IsObtained())
+            && x.Value.Items.Any(item => _viableUsefulItems.Contains(item.name))).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
+              .ToList();
         return viablePlacements;
-    }
+    } 
+
+    #endregion
 }
