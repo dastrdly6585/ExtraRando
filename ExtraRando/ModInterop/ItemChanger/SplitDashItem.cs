@@ -1,3 +1,4 @@
+using ExtraRando.ModInterop.ItemChanger.Modules;
 using ItemChanger;
 using ItemChanger.Modules;
 using ItemChanger.UIDefs;

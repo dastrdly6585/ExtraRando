@@ -75,7 +75,71 @@ public static class RandoInterop
             builder.AddLocationByName(ItemManager.Deepnest_Hot_Spring);
             builder.AddLocationByName(ItemManager.Lower_Godhome_Hot_Spring);
             builder.AddLocationByName(ItemManager.Upper_Godhome_Hot_Spring);
+        }
+        if (ExtraRando.Instance.Settings.RandomizePantheonAccess)
+        {
+            builder.AddItemByName(ItemManager.Pantheon_Access_Master);
+            builder.AddItemByName(ItemManager.Pantheon_Access_Artist);
+            builder.AddItemByName(ItemManager.Pantheon_Access_Sage);
+            builder.AddItemByName(ItemManager.Pantheon_Access_Knight);
+            builder.AddItemByName(ItemManager.Pantheon_Access_Hallownest);
 
+            builder.EditItemRequest(ItemManager.Pantheon_Access_Master, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Pantheon_Access_Master,
+                    Pool = "Key",
+                    PriceCap = 100
+                };
+            });
+            builder.EditItemRequest(ItemManager.Pantheon_Access_Artist, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Pantheon_Access_Artist,
+                    Pool = "Key",
+                    PriceCap = 200
+                };
+            });
+            builder.EditItemRequest(ItemManager.Pantheon_Access_Sage, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Pantheon_Access_Sage,
+                    Pool = "Key",
+                    PriceCap = 300
+                };
+            });
+            builder.EditItemRequest(ItemManager.Pantheon_Access_Knight, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Pantheon_Access_Knight,
+                    Pool = "Key",
+                    PriceCap = 400
+                };
+            });
+            builder.EditItemRequest(ItemManager.Pantheon_Access_Hallownest, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Pantheon_Access_Hallownest,
+                    Pool = "Key",
+                    PriceCap = 500
+                };
+            });
+
+            builder.AddLocationByName(ItemManager.Pantheon_Master);
+            builder.AddLocationByName(ItemManager.Pantheon_Artist);
+            builder.AddLocationByName(ItemManager.Pantheon_Sage);
+            builder.AddLocationByName(ItemManager.Pantheon_Knight);
+            builder.AddLocationByName(ItemManager.Pantheon_Hallownest);
         }
         if (ExtraRando.Instance.Settings.RandomizeMarkers)
         {
@@ -296,7 +360,6 @@ public static class RandoInterop
             }));
             builder.AddItem(new SingleItem(ItemManager.Key_Ring, new(builder.GetTerm("SIMPLE"), 4)));
         }
-
         if (ExtraRando.Instance.Settings.SplitShadeCloak && settings.PoolSettings.Skills)
         {
             Term leftDash = builder.GetOrAddTerm("LEFTDASH");
@@ -317,7 +380,23 @@ public static class RandoInterop
             builder.AddItem(new EmptyItem(ItemManager.Shell_Marker_Hint));
             builder.AddItem(new EmptyItem(ItemManager.Token_Marker_Hint));
         }
+        if (ExtraRando.Instance.Settings.RandomizePantheonAccess)
+        {
+            Term pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_1");
+            builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Master, new(pantheonTerm, 1)));
 
+            pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_2");
+            builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Artist, new(pantheonTerm, 1)));
+
+            pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_3");
+            builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Sage, new(pantheonTerm, 1)));
+
+            pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_4");
+            builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Knight, new(pantheonTerm, 1)));
+
+            pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_5");
+            builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Hallownest, new(pantheonTerm, 1)));
+        }
     }
 
     private static void CheckForNoLogic(GenerationSettings settings, LogicManagerBuilder builder)
@@ -361,8 +440,6 @@ public static class RandoInterop
         if (ModHooks.GetMod("RandoSettingsManager") is Mod)
             HookRandoSettingsManager();
     }
-
-    
 
     private static void HookRandoSettingsManager()
     {

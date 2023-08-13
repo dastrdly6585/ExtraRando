@@ -1,92 +1,252 @@
 [
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Crossroads-Hot_Spring",
-        "sceneName": "Crossroads_30",
-        "flingType": "DirectDeposit",
-        "tags": null
-    },
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Colosseum-Hot_Spring",
-        "sceneName": "Room_Colosseum_02",
-        "flingType": "DirectDeposit",
-        "tags": null
-    },
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Deepnest-Hot_Spring",
-        "sceneName": "Deepnest_30",
-        "flingType": "DirectDeposit",
-        "tags": null
-    },
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Bathhouse-Hot_Spring",
-        "sceneName": "Ruins_Bathhouse",
-        "flingType": "DirectDeposit",
-        "tags": null
-    },
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Lower_Godhome-Hot_Spring",
-        "sceneName": "GG_Atrium",
-        "flingType": "DirectDeposit",
-        "tags": [
-            {
-                "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
-                "Properties": {
-                    "ModSource": "ExtraRando",
-                    "PinSprite": {
-                        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
-                        "Key": "HotSpring"
-                    },
-                    "SceneNames": "GG_Waterways",
-                    "MapLocations": {
-                        "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
-                        "$values": [
-                            {
-                                "Item1": "GG_Waterways",
-                                "Item2": -0.2,
-                                "Item3": 0.2
-                            }
-                        ]
-                    }
-                },
-                "Message": "RandoSupplementalMetadata",
-                "Loaded": true
-            }
-        ]
-    },
-    {
-        "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
-        "name": "Upper_Godhome-Hot_Spring",
-        "sceneName": "GG_Atrium_Roof",
-        "flingType": "DirectDeposit",
-        "tags": [
-            {
-                "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
-                "Properties": {
-                    "ModSource": "ExtraRando",
-                    "PinSprite": {
-                        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
-                        "Key": "HotSpring"
-                    },
-                    "SceneNames": "GG_Waterways",
-                    "MapLocations": {
-                        "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
-                        "$values": [
-                            {
-                                "Item1": "GG_Waterways",
-                                "Item2": -0.2,
-                                "Item3": 0.3
-                            }
-                        ]
-                    }
-                },
-                "Message": "RandoSupplementalMetadata",
-                "Loaded": true
-            }
-        ]
-    }
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Crossroads-Hot_Spring",
+    "sceneName": "Crossroads_30",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Colosseum-Hot_Spring",
+    "sceneName": "Room_Colosseum_02",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Deepnest-Hot_Spring",
+    "sceneName": "Deepnest_30",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Bathhouse-Hot_Spring",
+    "sceneName": "Ruins_Bathhouse",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Lower_Godhome-Hot_Spring",
+    "sceneName": "GG_Atrium",
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "HotSpring"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": -0.2,
+                "Item3": 0.2
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "name": "Upper_Godhome-Hot_Spring",
+    "sceneName": "GG_Atrium_Roof",
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "HotSpring"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": -0.2,
+                "Item3": 0.3
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "name": "Pantheon-Master",
+    "sceneName": "GG_Atrium",
+    "PantheonNumber": 1,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Pantheon_Master"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": 0.2,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "name": "Pantheon-Artist",
+    "sceneName": "GG_Atrium",
+    "PantheonNumber": 2,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Pantheon_Artist"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": 0.5,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "name": "Pantheon-Sage",
+    "sceneName": "GG_Atrium",
+    "PantheonNumber": 3,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Pantheon_Sage"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": 0.8,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "name": "Pantheon-Knight",
+    "sceneName": "GG_Atrium",
+    "PantheonNumber": 4,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Pantheon_Knight"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": 1.1,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "name": "Pantheon-Hallownest",
+    "sceneName": "GG_Atrium_Roof",
+    "PantheonNumber": 5,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Pantheon_Hallownest"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "GG_Waterways",
+                "Item2": 1.4,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
+  }
 ]

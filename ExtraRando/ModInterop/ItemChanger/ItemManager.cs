@@ -26,6 +26,11 @@ public static class ItemManager
     public const string Shell_Marker_Hint = "Shell_Marker_Hint";
     public const string Gleaming_Marker_Hint = "Gleaming_Marker_Hint";
     public const string Token_Marker_Hint = "Token_Marker_Hint";
+    public const string Pantheon_Access_Master = "Pantheon_Access-Master";
+    public const string Pantheon_Access_Artist = "Pantheon_Access-Artist";
+    public const string Pantheon_Access_Sage = "Pantheon_Access-Sage";
+    public const string Pantheon_Access_Knight = "Pantheon_Access-Knight"; 
+    public const string Pantheon_Access_Hallownest = "Pantheon_Access-Hallownest";
 
     #endregion
 
@@ -37,6 +42,11 @@ public static class ItemManager
     public const string Bathhouse_Hot_Spring = "Crossroads-Hot_Spring";
     public const string Lower_Godhome_Hot_Spring = "Lower_Godhome-Hot_Spring";
     public const string Upper_Godhome_Hot_Spring = "Upper_Godhome-Hot_Spring";
+    public const string Pantheon_Master = "Pantheon-Master";
+    public const string Pantheon_Artist = "Pantheon-Artist";
+    public const string Pantheon_Sage = "Pantheon-Sage";
+    public const string Pantheon_Knight = "Pantheon-Knight";
+    public const string Pantheon_Hallownest = "Pantheon-Hallownest";
 
     #endregion
 

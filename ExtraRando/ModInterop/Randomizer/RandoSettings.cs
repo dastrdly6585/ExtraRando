@@ -14,5 +14,9 @@ public class RandoSettings
 
     public bool RandomizeMarkers { get; set; }
 
+    public bool RandomizeColoAccess { get; set; }
+
+    public bool RandomizePantheonAccess { get; set; }
+
     public bool NoLogic { get; set; }
 }

@@ -5,7 +5,7 @@ using Modding;
 using MonoMod.Cil;
 using System;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChanger.Modules;
 
 public class SplitShadeCloakModule : Module
 {
@@ -31,7 +31,7 @@ public class SplitShadeCloakModule : Module
             {
                 // 0 down, 1 left, 2 right
                 int direction = DetermineDirection();
-                return (x && direction == 0) || (direction == 1 && HasLeftCloak) || (direction == 2 && HasRightCloak);
+                return x && direction == 0 || direction == 1 && HasLeftCloak || direction == 2 && HasRightCloak;
             });
         }
     }
@@ -53,7 +53,7 @@ public class SplitShadeCloakModule : Module
             PlayerData.instance.SetBool(nameof(PlayerData.hasShadowDash), true);
         }
         else if (name == "rightShadeDash")
-        { 
+        {
             HasRightCloak = orig;
             PlayerData.instance.SetBool(nameof(PlayerData.hasShadowDash), true);
         }
@@ -64,8 +64,8 @@ public class SplitShadeCloakModule : Module
 
     #region Public Methods
 
-    public override void Initialize() 
-    { 
+    public override void Initialize()
+    {
         IL.HeroController.HeroDash += HeroController_HeroDash;
         ModHooks.GetPlayerBoolHook += ModHooks_GetPlayerBoolHook;
         ModHooks.SetPlayerBoolHook += ModHooks_SetPlayerBoolHook;

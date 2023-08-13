@@ -1,26 +1,46 @@
 [
-    {
-        "name": "Crossroads-Hot_Spring",
-        "logic": "Crossroads_30[left1]"
-    },
-    {
-        "name": "Deepnest-Hot_Spring",
-        "logic": "Deepnest_30[left1] | Deepnest_30[right1]"
-    },
-    {
-        "name": "Colosseum-Hot_Spring",
-        "logic": "Room_Colosseum_02[top1] | Room_Colosseum_02[top2] + (BREAKABLE_RoomColosseum02_BreakableWallSilhouette ? TRUE )"
-    },
-    {
-        "name": "Bathhouse-Hot_Spring",
-        "logic": "Ruins_Bathhouse[right1] | Ruins_Bathhouse[door1]"
-    },
-    {
-        "name": "Lower_Godhome-Hot_Spring",
-        "logic": "GG_Atrium + RIGHTCLAW + SWIM"
-    },
-    {
-        "name": "Upper_Godhome-Hot_Spring",
-        "logic": "GG_Atrium + FULLCLAW + Pantheon_4_Unlocked"
-    }
+  {
+    "name": "Crossroads-Hot_Spring",
+    "logic": "Crossroads_30[left1]"
+  },
+  {
+    "name": "Deepnest-Hot_Spring",
+    "logic": "Deepnest_30[left1] | Deepnest_30[right1]"
+  },
+  {
+    "name": "Colosseum-Hot_Spring",
+    "logic": "Room_Colosseum_02[top1] | Room_Colosseum_02[top2] + (BREAKABLE_RoomColosseum02_BreakableWallSilhouette ? TRUE )"
+  },
+  {
+    "name": "Bathhouse-Hot_Spring",
+    "logic": "Ruins_Bathhouse[right1] | Ruins_Bathhouse[door1]"
+  },
+  {
+    "name": "Lower_Godhome-Hot_Spring",
+    "logic": "Godhome_Access + SWIM"
+  },
+  {
+    "name": "Upper_Godhome-Hot_Spring",
+    "logic": "Godhome_Access + (Pantheon_4_Accessible + SPELLS>2 | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
+  },
+  {
+    "name": "Pantheon-Master",
+    "logic": "Pantheon_1_Unlocked"
+  },
+  {
+    "name": "Pantheon-Artist",
+    "logic": "Pantheon_2_Unlocked"
+  },
+  {
+    "name": "Pantheon-Sage",
+    "logic": "Pantheon_3_Unlocked"
+  },
+  {
+    "name": "Pantheon-Knight",
+    "logic": "Pantheon_4_Unlocked"
+  },
+  {
+    "name": "Pantheon-Hallownest",
+    "logic": "Pantheon_5_Unlocked"
+  }
 ]
