@@ -26,6 +26,9 @@ public static class ItemManager
     public const string Shell_Marker_Hint = "Shell_Marker_Hint";
     public const string Gleaming_Marker_Hint = "Gleaming_Marker_Hint";
     public const string Token_Marker_Hint = "Token_Marker_Hint";
+    public const string Colo_Ticket_Bronze = "Colo_Ticket-Bronze"; 
+    public const string Colo_Ticket_Silver = "Colo_Ticket-Silver";
+    public const string Colo_Ticket_Gold = "Colo_Ticket-Gold";
     public const string Pantheon_Access_Master = "Pantheon_Access-Master";
     public const string Pantheon_Access_Artist = "Pantheon_Access-Artist";
     public const string Pantheon_Access_Sage = "Pantheon_Access-Sage";

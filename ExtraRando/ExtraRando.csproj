@@ -24,11 +24,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Resources\Sprites\Bronze_Pass.png" />
+      <None Remove="Resources\Sprites\Gold_Pass.png" />
       <None Remove="Resources\Sprites\Pantheon_Artist.png" />
       <None Remove="Resources\Sprites\Pantheon_Hallownest.png" />
       <None Remove="Resources\Sprites\Pantheon_Knight.png" />
       <None Remove="Resources\Sprites\Pantheon_Master.png" />
       <None Remove="Resources\Sprites\Pantheon_Sage.png" />
+      <None Remove="Resources\Sprites\Silver_Pass.png" />
     </ItemGroup>
 
     <ItemGroup>

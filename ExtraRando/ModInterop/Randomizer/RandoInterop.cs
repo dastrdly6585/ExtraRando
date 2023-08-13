@@ -76,6 +76,43 @@ public static class RandoInterop
             builder.AddLocationByName(ItemManager.Lower_Godhome_Hot_Spring);
             builder.AddLocationByName(ItemManager.Upper_Godhome_Hot_Spring);
         }
+        if (ExtraRando.Instance.Settings.RandomizeColoAccess)
+        {
+            builder.AddItemByName(ItemManager.Colo_Ticket_Bronze);
+            builder.AddItemByName(ItemManager.Colo_Ticket_Silver);
+            builder.AddItemByName(ItemManager.Colo_Ticket_Gold);
+
+            builder.EditItemRequest(ItemManager.Colo_Ticket_Bronze, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Colo_Ticket_Bronze,
+                    Pool = "Key",
+                    PriceCap = 333
+                };
+            });
+            builder.EditItemRequest(ItemManager.Colo_Ticket_Silver, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Colo_Ticket_Silver,
+                    Pool = "Key",
+                    PriceCap = 666
+                };
+            });
+            builder.EditItemRequest(ItemManager.Colo_Ticket_Gold, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    MajorItem = false,
+                    Name = ItemManager.Colo_Ticket_Gold,
+                    Pool = "Key",
+                    PriceCap = 1000
+                };
+            });
+        }
         if (ExtraRando.Instance.Settings.RandomizePantheonAccess)
         {
             builder.AddItemByName(ItemManager.Pantheon_Access_Master);
@@ -379,6 +416,20 @@ public static class RandoInterop
             builder.AddItem(new EmptyItem(ItemManager.Scarab_Marker_Hint));
             builder.AddItem(new EmptyItem(ItemManager.Shell_Marker_Hint));
             builder.AddItem(new EmptyItem(ItemManager.Token_Marker_Hint));
+        }
+        if (ExtraRando.Instance.Settings.RandomizeColoAccess)
+        {
+            Term coloTerm = builder.GetOrAddTerm("COLO_KEY_1");
+            builder.AddItem(new SingleItem(ItemManager.Colo_Ticket_Bronze, new(coloTerm, 1)));
+
+            coloTerm = builder.GetOrAddTerm("COLO_KEY_2");
+            builder.AddItem(new SingleItem(ItemManager.Colo_Ticket_Silver, new(coloTerm, 1)));
+
+            coloTerm = builder.GetOrAddTerm("COLO_KEY_3");
+            builder.AddItem(new SingleItem(ItemManager.Colo_Ticket_Gold, new(coloTerm, 1)));
+
+            builder.DoLogicEdit(new("Defeated_Colosseum_1", "(ORIG) + COLO_KEY_1"));
+            builder.DoLogicEdit(new("Defeated_Colosseum_2", "(ORIG) + COLO_KEY_2"));
         }
         if (ExtraRando.Instance.Settings.RandomizePantheonAccess)
         {

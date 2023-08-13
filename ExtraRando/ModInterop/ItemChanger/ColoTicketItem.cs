@@ -2,8 +2,9 @@
 using ItemChanger;
 using KorzUtils.Data;
 using KorzUtils.Helper;
+using IC = ItemChanger;
 
-namespace CurseRandomizer.ItemData;
+namespace ExtraRando.ModInterop.ItemChanger;
 
 public class ColoTicketItem : AbstractItem
 {
@@ -36,7 +37,7 @@ public class ColoTicketItem : AbstractItem
         }
         catch (System.Exception exception)
         {
-            LogHelper.Write<ExtraRando.ExtraRando>("Couldn't modify colo trial board ", exception);
+            LogHelper.Write<ExtraRando>("Couldn't modify colo trial board ", exception);
         }
     }
 
@@ -44,20 +45,20 @@ public class ColoTicketItem : AbstractItem
     {
         if (Trial == "Bronze")
         {
-            if (ItemChanger.Internal.Ref.Settings.Placements.ContainsKey(LocationNames.Charm_Notch_Colosseum)
-                && ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum].Items.Count > 0)
+            if (IC.Internal.Ref.Settings.Placements.ContainsKey(LocationNames.Charm_Notch_Colosseum)
+                && IC.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum].Items.Count > 0)
                 value = "You are not worthy to enter the arena yet. If you want " +
-                    ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum].Items[0].GetPreviewName(ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum])
+                    IC.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum].Items[0].GetPreviewName(IC.Internal.Ref.Settings.Placements[LocationNames.Charm_Notch_Colosseum])
                     + " you have to be a little... richer. (Translation: Only fools with a ticket have access, so get lost.)";
             else
                 value = "You are not worthy to enter the arena yet.";
         }
         else if (Trial == "Silver")
         {
-            if (ItemChanger.Internal.Ref.Settings.Placements.ContainsKey(LocationNames.Pale_Ore_Colosseum)
-                && ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum].Items.Count > 0)
+            if (IC.Internal.Ref.Settings.Placements.ContainsKey(LocationNames.Pale_Ore_Colosseum)
+                && IC.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum].Items.Count > 0)
                 value = "You are not worthy to enter the arena yet. If you want " +
-                    ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum].Items[0].GetPreviewName(ItemChanger.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum])
+                    IC.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum].Items[0].GetPreviewName(IC.Internal.Ref.Settings.Placements[LocationNames.Pale_Ore_Colosseum])
                     + " you have to be a little... richer. (Translation: Only fools with a ticket have access, so get lost.)";
             else
                 value = "You are not worthy to enter the arena yet.";

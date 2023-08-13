@@ -553,6 +553,72 @@
     "obtainState": "Unobtained"
   },
   {
+    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "name": "Colo_Ticket-Bronze",
+    "Trial": "Bronze",
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Colo (Warrior) Ticket"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Winner Winner... no not in millions years would I say that unironically."
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "Key": "Bronze_Pass"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "name": "Colo_Ticket-Silver",
+    "Trial": "Silver",
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Colo (Conqueror) Ticket"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "You could see this as some kind of battle pass."
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "Key": "Silver_Pass"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "name": "Colo_Ticket-Gold",
+    "Trial": "Gold",
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Colo (Fool) Ticket"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Is this the new battle royale game?"
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "Key": "Gold_Pass"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
     "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Artist",
     "fieldName": "bossDoorStateTier2",
