@@ -64,7 +64,15 @@ public class ColoTicketItem : AbstractItem
                 value = "You are not worthy to enter the arena yet.";
         }
         else
-            value = "You are not worthy to enter the arena yet. Come back when you are a little... richer. (Translation: Only fools with a ticket have access, so get lost.)";
+        {
+            if (IC.Internal.Ref.Settings.Placements.ContainsKey("The_Glory_of_Being_a_Fool-Colosseum")
+                && IC.Internal.Ref.Settings.Placements["The_Glory_of_Being_a_Fool-Colosseum"].Items.Count > 0)
+                value = "You are not worthy to enter the arena yet. If you want " +
+                        IC.Internal.Ref.Settings.Placements["The_Glory_of_Being_a_Fool-Colosseum"].Items[0].GetPreviewName(IC.Internal.Ref.Settings.Placements["The_Glory_of_Being_a_Fool-Colosseum"])
+                        + " you have to be a little... richer. (Translation: Only fools with a ticket have access, so get lost.)";
+            else
+                value = "You are not worthy to enter the arena yet. Come back when you are a little... richer. (Translation: Only fools with a ticket have access, so get lost.)";
+        }
     }
 
     #endregion
