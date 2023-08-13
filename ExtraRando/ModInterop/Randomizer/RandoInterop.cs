@@ -430,6 +430,9 @@ public static class RandoInterop
 
             builder.DoLogicEdit(new("Defeated_Colosseum_1", "(ORIG) + COLO_KEY_1"));
             builder.DoLogicEdit(new("Defeated_Colosseum_2", "(ORIG) + COLO_KEY_2"));
+
+            if (builder.LogicLookup.ContainsKey("The_Glory_of_Being_a_Fool-Colosseum"))
+                builder.DoLogicEdit(new("The_Glory_of_Being_a_Fool-Colosseum", "Room_Colosseum_01[left1] + Can_Replenish_Geo + (ANYCLAW | (SPICYCOMBATSKIPS + WINGS)) + COMBAT[Colosseum_2] + COLO_KEY_3 + (READ ? TRUE)"));
         }
         if (ExtraRando.Instance.Settings.RandomizePantheonAccess)
         {
