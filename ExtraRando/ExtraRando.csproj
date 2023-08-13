@@ -7,14 +7,14 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>ExtraRando</AssemblyTitle>
-        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.1.1.0</AssemblyVersion>
     </PropertyGroup>
 
     <PropertyGroup>
         <HollowKnightRefs>E:/Program Files/Steam/steamapps/common/Hollow Knight/hollow_knight_Data/Managed/</HollowKnightRefs>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <DocumentationFile></DocumentationFile>
-        <FileVersion>0.0.1.0</FileVersion>
+        <FileVersion>0.1.1.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,14 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Resources\Sprites\Bronze_Pass.png" />
-      <None Remove="Resources\Sprites\Gold_Pass.png" />
-      <None Remove="Resources\Sprites\Pantheon_Artist.png" />
-      <None Remove="Resources\Sprites\Pantheon_Hallownest.png" />
-      <None Remove="Resources\Sprites\Pantheon_Knight.png" />
-      <None Remove="Resources\Sprites\Pantheon_Master.png" />
-      <None Remove="Resources\Sprites\Pantheon_Sage.png" />
-      <None Remove="Resources\Sprites\Silver_Pass.png" />
+      <None Remove="Resources\Randomizer\macros.json" />
     </ItemGroup>
 
     <ItemGroup>

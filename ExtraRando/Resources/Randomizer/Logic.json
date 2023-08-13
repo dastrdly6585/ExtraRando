@@ -17,11 +17,11 @@
   },
   {
     "name": "Lower_Godhome-Hot_Spring",
-    "logic": "Godhome_Access + SWIM"
+    "logic": "GG_Atrium + SWIM"
   },
   {
     "name": "Upper_Godhome-Hot_Spring",
-    "logic": "Godhome_Access + (Pantheon_4_Accessible + SPELLS>2 | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
+    "logic": "GG_Atrium + (Pantheon_4_Accessible + SPELLS>2 | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
   },
   {
     "name": "Pantheon-Master",

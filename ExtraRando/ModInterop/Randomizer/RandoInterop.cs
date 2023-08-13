@@ -24,7 +24,7 @@ public static class RandoInterop
     {
         if (!ExtraRando.Instance.Settings.Enabled)
             return;
-        
+
         if (ExtraRando.Instance.Settings.SplitShadeCloak && builder.gs.PoolSettings.Skills)
         {
             builder.RemoveItemByName(ItemNames.Shade_Cloak);
@@ -235,6 +235,7 @@ public static class RandoInterop
                 };
             });
         }
+
     }
 
     private static void ApplyScarceItemPool(RequestBuilder builder)
@@ -362,6 +363,9 @@ public static class RandoInterop
     {
         if (!ExtraRando.Instance.Settings.Enabled)
             return;
+
+        using Stream macroFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Macros.json");
+        builder.DeserializeJson(LogicManagerBuilder.JsonType.Macros, macroFile);
         using Stream waypointStream = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Waypoints.json");
         builder.DeserializeJson(LogicManagerBuilder.JsonType.Waypoints, waypointStream);
         using Stream logicFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Logic.json");

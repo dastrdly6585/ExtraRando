@@ -15,7 +15,7 @@ public class ExtraRando : Mod, IGlobalSettings<GlobalSaveSettings>
 
     #region Properties
 
-    public override string GetVersion() => "0.0.1.0";
+    public override string GetVersion() => "0.1.1.0";
 
     public RandoSettings Settings { get; set; } = new();
 

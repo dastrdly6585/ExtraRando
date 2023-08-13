@@ -10,58 +10,53 @@
     "Stateless": true
   },
   {
-    "name": "Godhome_Access",
-    "logic": "GG_Atrium + RIGHTCLAW",
-    "Stateless": true
-  },
-  {
     "name": "Pantheon_1_Unlocked",
-    "logic": "Godhome_Access + Defeated_Gruz_Mother + Defeated_False_Knight + Defeated_Brooding_Mawlek + Defeated_Hornet_1 + Defeated_Massive_Moss_Charger + (Defeated_Sanctum_Warrior | Defeated_Elegant_Warrior) + Defeated_Gorb + Defeated_Dung_Defender + Defeated_Vengefly_King",
+    "logic": "GG_Atrium + Defeated_Gruz_Mother + Defeated_False_Knight + Defeated_Brooding_Mawlek + Defeated_Hornet_1 + Defeated_Massive_Moss_Charger + (Defeated_Sanctum_Warrior | Defeated_Elegant_Warrior) + Defeated_Gorb + Defeated_Dung_Defender + Defeated_Vengefly_King",
     "Stateless": true
   },
   {
     "name": "Pantheon_2_Unlocked",
-    "logic": "Godhome_Access + Defeated_Xero + Defeated_Crystal_Guardian + Defeated_Mantis_Lords + Defeated_Soul_Master + Defeated_Flukemarm + Defeated_Broken_Vessel + Defeated_Nosk + Defeated_Marmu + Defeated_Colosseum_2",
+    "logic": "GG_Atrium + Defeated_Xero + Defeated_Crystal_Guardian + Defeated_Mantis_Lords + Defeated_Soul_Master + Defeated_Flukemarm + Defeated_Broken_Vessel + Defeated_Nosk + Defeated_Marmu + Defeated_Colosseum_2",
     "Stateless": true
   },
   {
     "name": "Pantheon_3_Unlocked",
-    "logic": "Godhome_Access + Defeated_Hornet_2 + Defeated_Galien + Defeated_Uumuu + Defeated_Grimm + Defeated_Collector + Defeated_Hive_Knight + Defeated_Elder_Hu + Defeated_Grey_Prince_Zote",
+    "logic": "GG_Atrium + Defeated_Hornet_2 + Defeated_Galien + Defeated_Uumuu + Defeated_Grimm + Defeated_Collector + Defeated_Hive_Knight + Defeated_Elder_Hu + Defeated_Grey_Prince_Zote",
     "Stateless": true
   },
   {
     "name": "Pantheon_4_Unlocked",
-    "logic": "Godhome_Access + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Accessible + Pantheon_2_Accessible + Pantheon_3_Accessible + SPELLS>2 + WINGS",
+    "logic": "GG_Atrium + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Accessible + Pantheon_2_Accessible + Pantheon_3_Accessible + COMBAT[Pantheon_1] + COMBAT[Pantheon_2] + COMBAT[Pantheon_3] + WINGS + ANYCLAW",
     "Stateless": true
   },
   {
     "name": "Pantheon_5_Unlocked",
-    "logic": "Godhome_Access + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + Pantheon_4_Accessible | (PANTHEON_KEY_5 ? FALSE))",
+    "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + Pantheon_4_Accessible + COMBAT[Pantheon_4] | (PANTHEON_KEY_5 ? FALSE))",
     "Stateless": true
   },
   {
     "name": "Pantheon_1_Accessible",
-    "logic": "Godhome_Access + (PANTHEON_KEY_1 ? FALSE) | Pantheon_1_Unlocked",
+    "logic": "GG_Atrium + (PANTHEON_KEY_1 ? FALSE) | Pantheon_1_Unlocked",
     "Stateless": true
   },
   {
     "name": "Pantheon_2_Accessible",
-    "logic": "Godhome_Access + (PANTHEON_KEY_2 ? FALSE) | Pantheon_2_Unlocked",
+    "logic": "GG_Atrium + (PANTHEON_KEY_2 ? FALSE) | Pantheon_2_Unlocked",
     "Stateless": true
   },
   {
     "name": "Pantheon_3_Accessible",
-    "logic": "Godhome_Access + (PANTHEON_KEY_3 ? FALSE) | Pantheon_3_Unlocked",
+    "logic": "GG_Atrium + (PANTHEON_KEY_3 ? FALSE) | Pantheon_3_Unlocked",
     "Stateless": true
   },
   {
     "name": "Pantheon_4_Accessible",
-    "logic": "Godhome_Access + (PANTHEON_KEY_4 ? FALSE) | Pantheon_4_Unlocked",
+    "logic": "GG_Atrium + (PANTHEON_KEY_4 ? FALSE) | Pantheon_4_Unlocked",
     "Stateless": true
   },
   {
     "name": "Pantheon_5_Accessible",
-    "logic": "(Godhome_Access + (PANTHEON_KEY_5 ? FALSE) | Pantheon_4_Unlocked) + WINGS + LEFTCLAW",
+    "logic": "(GG_Atrium + (PANTHEON_KEY_5 ? FALSE) | Pantheon_4_Accessible + COMBAT[Pantheon_4]) + WINGS + LEFTCLAW",
     "Stateless": true
   }
 ]
