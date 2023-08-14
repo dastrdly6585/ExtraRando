@@ -7,7 +7,7 @@
   "COMBAT[Sheo]": "BOSS + (FOCUS | SPICYCOMBATSKIPS)",
   "COMBAT[God_Tamer]": "BOSS",
   "COMBAT[Sly]": "BOSS + (FOCUS | SPICYCOMBATSKIPS)",
-  "COMBAT[Pure_Vessel]": "COMBAT[Radiance]",
+  "COMBAT[Pure_Vessel]": "FULLDASH + (FULLSHADOWDASH | QUAKE) + (FIREBALL>1 + UPSLASH | SCREAM>1 + UPSLASH | CURSED + (FIREBALL | SCREAM) + UPSLASH | MILDCOMBATSKIPS + (FIREBALL | SCREAM) + (UPSLASH | SIDESLASH | GREATSLASH) | SPICYCOMBATSKIPS)",
   "COMBAT[Winged_Nosk]": "AERIALMINIBOSS",
   "COMBAT[Pantheon_1]": "COMBAT[Vengefly_King] + COMBAT[Gruz_Mother] + COMBAT[False_Knight] + COMBAT[Massive_Moss_Charger] + COMBAT[Hornet_1] + COMBAT[Gorb] + COMBAT[Dung_Defender] + COMBAT[Sanctum_Warrior] + COMBAT[Brooding_Mawlek] + COMBAT[Oro_and_Mato]",
   "COMBAT[Pantheon_2]": "COMBAT[Xero] + COMBAT[Crystal_Guardian] + COMBAT[Soul_Master] + COMBAT[Oblobbles] + COMBAT[Mantis_Lords] + COMBAT[Marmu] + COMBAT[Nosk] + COMBAT[Flukemarm] + COMBAT[Broken_Vessel] + COMBAT[Sheo]",

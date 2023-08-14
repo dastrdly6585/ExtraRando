@@ -9,7 +9,7 @@
   },
   {
     "name": "Colosseum-Hot_Spring",
-    "logic": "Room_Colosseum_02[top1] | Room_Colosseum_02[top2] + (BREAKABLE_RoomColosseum02_BreakableWallSilhouette ? TRUE )"
+    "logic": "(Room_Colosseum_02[top1] | Room_Colosseum_02[top2]) + (BREAKABLE_RoomColosseum02_BreakableWallSilhouette ? TRUE)"
   },
   {
     "name": "Bathhouse-Hot_Spring",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Upper_Godhome-Hot_Spring",
-    "logic": "GG_Atrium + (Pantheon_4_Accessible + SPELLS>2 | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
+    "logic": "GG_Atrium + (Pantheon_4_Accessible | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
   },
   {
     "name": "Pantheon-Master",

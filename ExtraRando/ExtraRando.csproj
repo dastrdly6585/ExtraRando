@@ -24,10 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Resources\Randomizer\macros.json" />
-    </ItemGroup>
-
-    <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>..\..\..\Program Files\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>

@@ -366,8 +366,10 @@ public static class RandoInterop
 
         using Stream macroFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Macros.json");
         builder.DeserializeJson(LogicManagerBuilder.JsonType.Macros, macroFile);
+
         using Stream waypointStream = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Waypoints.json");
         builder.DeserializeJson(LogicManagerBuilder.JsonType.Waypoints, waypointStream);
+
         using Stream logicFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Logic.json");
         builder.DeserializeJson(LogicManagerBuilder.JsonType.Locations, logicFile);
 
