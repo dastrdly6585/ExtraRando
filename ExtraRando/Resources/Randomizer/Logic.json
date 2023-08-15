@@ -21,7 +21,7 @@
   },
   {
     "name": "Upper_Godhome-Hot_Spring",
-    "logic": "GG_Atrium + (Pantheon_4_Accessible | (PANTHEON_4_KEY ? FALSE)) + WINGS + LEFTCLAW"
+    "logic": "GG_Atrium + WINGS + LEFTCLAW + ((PANTHEON_KEY_5 ? FALSE) | Pantheon_4_Beatable)"
   },
   {
     "name": "Pantheon-Master",

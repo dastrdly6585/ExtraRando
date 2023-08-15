@@ -26,37 +26,37 @@
   },
   {
     "name": "Pantheon_4_Unlocked",
-    "logic": "GG_Atrium + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Accessible + Pantheon_2_Accessible + Pantheon_3_Accessible + COMBAT[Pantheon_1] + COMBAT[Pantheon_2] + COMBAT[Pantheon_3] + WINGS + ANYCLAW",
+    "logic": "GG_Atrium + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Beatable + Pantheon_2_Beatable + Pantheon_3_Beatable",
     "Stateless": true
   },
   {
     "name": "Pantheon_5_Unlocked",
-    "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + Pantheon_4_Accessible + COMBAT[Pantheon_4] | (PANTHEON_KEY_5 ? FALSE))",
+    "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + Pantheon_4_Beatable | (PANTHEON_KEY_5 ? FALSE))",
     "Stateless": true
   },
   {
-    "name": "Pantheon_1_Accessible",
-    "logic": "GG_Atrium + (PANTHEON_KEY_1 ? FALSE) | Pantheon_1_Unlocked",
+    "name": "Pantheon_1_Beatable",
+    "logic": "GG_Atrium + (PANTHEON_KEY_1 ? FALSE) + COMBAT[Pantheon_1] | Pantheon_1_Unlocked",
     "Stateless": true
   },
   {
-    "name": "Pantheon_2_Accessible",
-    "logic": "GG_Atrium + (PANTHEON_KEY_2 ? FALSE) | Pantheon_2_Unlocked",
+    "name": "Pantheon_2_Beatable",
+    "logic": "GG_Atrium + (PANTHEON_KEY_2 ? FALSE) + COMBAT[Pantheon_2] | Pantheon_2_Unlocked + Can_Damage_Crystal_Guardian",
     "Stateless": true
   },
   {
-    "name": "Pantheon_3_Accessible",
-    "logic": "GG_Atrium + (PANTHEON_KEY_3 ? FALSE) | Pantheon_3_Unlocked",
+    "name": "Pantheon_3_Beatable",
+    "logic": "GG_Atrium + (PANTHEON_KEY_3 ? FALSE) + COMBAT[Pantheon_3] | Pantheon_3_Unlocked",
     "Stateless": true
   },
   {
-    "name": "Pantheon_4_Accessible",
-    "logic": "GG_Atrium + (PANTHEON_KEY_4 ? FALSE) | Pantheon_4_Unlocked",
+    "name": "Pantheon_4_Beatable",
+    "logic": "GG_Atrium + ((PANTHEON_KEY_4 ? FALSE) | Pantheon_4_Unlocked) + COMBAT[Pantheon_4]",
     "Stateless": true
   },
   {
-    "name": "Pantheon_5_Accessible",
-    "logic": "(GG_Atrium + (PANTHEON_KEY_5 ? FALSE) | Pantheon_4_Accessible + COMBAT[Pantheon_4]) + WINGS + LEFTCLAW",
+    "name": "Can_Damage_Crystal_Guardian",
+    "logic": "UPSLASH | LEFTSLASH | RIGHTSLASH | MILDCOMBATSKIPS + (CYCLONE | GREATSLASH) | SPICYCOMBATSKIPS + (CYCLONE | GREATSLASH) + (DREAMNAIL + (SPELLS | FOCUS + SPORESHROOM | GLOWINGWOMB) | WEAVERSONG)",
     "Stateless": true
   }
 ]
