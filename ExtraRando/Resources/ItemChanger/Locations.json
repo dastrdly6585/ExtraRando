@@ -248,5 +248,37 @@
         "Loaded": true
       }
     ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.ButtLocation, ExtraRando",
+    "name": "Bardoon_Butt",
+    "sceneName": "Deepnest_East_04",
+    "PantheonNumber": 5,
+    "flingType": "DirectDeposit",
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "PinSprite": {
+            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "Key": "Bardoon_Butt"
+          },
+          "SceneNames": "GG_Waterways",
+          "MapLocations": {
+            "$type": "System.ValueTuple`3[[System.String, mscorlib],[System.Single, mscorlib],[System.Single, mscorlib]][], mscorlib",
+            "$values": [
+              {
+                "Item1": "Deepnest_East_04",
+                "Item2": 1.4,
+                "Item3": 0
+              }
+            ]
+          }
+        },
+        "Message": "RandoSupplementalMetadata",
+        "Loaded": true
+      }
+    ]
   }
 ]

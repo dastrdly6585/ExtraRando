@@ -34,6 +34,7 @@ public static class ItemManager
     public const string Pantheon_Access_Sage = "Pantheon_Access-Sage";
     public const string Pantheon_Access_Knight = "Pantheon_Access-Knight"; 
     public const string Pantheon_Access_Hallownest = "Pantheon_Access-Hallownest";
+    public const string Bardoon_Butt_Smack = "Bardoon_Butt_Smack";
 
     #endregion
 
@@ -50,6 +51,7 @@ public static class ItemManager
     public const string Pantheon_Sage = "Pantheon-Sage";
     public const string Pantheon_Knight = "Pantheon-Knight";
     public const string Pantheon_Hallownest = "Pantheon-Hallownest";
+    public const string Bardoon_Butt = "Bardoon_Butt";
 
     #endregion
 

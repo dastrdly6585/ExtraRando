@@ -235,6 +235,21 @@ public static class RandoInterop
                 };
             });
         }
+        if (ExtraRando.Instance.Settings.RandomizeButt)
+        {
+            builder.AddItemByName(ItemManager.Bardoon_Butt_Smack);
+            builder.EditItemRequest(ItemManager.Bardoon_Butt_Smack, info =>
+            {
+                info.getItemDef = () => new()
+                {
+                    Name = ItemManager.Bardoon_Butt_Smack,
+                    Pool = "KEY",
+                    PriceCap = 10000
+                };
+            });
+
+            builder.AddLocationByName(ItemManager.Bardoon_Butt);
+        }
 
     }
 
@@ -457,6 +472,8 @@ public static class RandoInterop
             pantheonTerm = builder.GetOrAddTerm("PANTHEON_KEY_5");
             builder.AddItem(new SingleItem(ItemManager.Pantheon_Access_Hallownest, new(pantheonTerm, 1)));
         }
+        if (ExtraRando.Instance.Settings.RandomizeButt)
+            builder.AddItem(new EmptyItem(ItemManager.Bardoon_Butt_Smack));
     }
 
     private static void CheckForNoLogic(GenerationSettings settings, LogicManagerBuilder builder)

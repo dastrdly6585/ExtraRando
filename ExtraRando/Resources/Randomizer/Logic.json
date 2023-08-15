@@ -42,5 +42,9 @@
   {
     "name": "Pantheon-Hallownest",
     "logic": "Pantheon_5_Unlocked"
+  },
+  {
+    "name": "Bardoon_Butt",
+    "logic": "Deepnest_East_04[left1] + (WINGS | RIGHTCLAW) + (BREAKABLE_Deepnest_East_04_Breakable_Wall_Waterways ? TRUE)"
   }
 ]

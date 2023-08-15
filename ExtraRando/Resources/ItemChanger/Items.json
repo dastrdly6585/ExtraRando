@@ -498,7 +498,7 @@
       },
       "shopDesc": {
         "$type": "ItemChanger.BoxedString, ItemChanger",
-        "Value": "This might be useful... or not. I don't care, I just want your money.'"
+        "Value": "This might be useful... or not. I don't care, I just want your money."
       },
       "sprite": {
         "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
@@ -701,6 +701,27 @@
       "sprite": {
         "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Hallownest"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChanger.ButtItem, ExtraRando",
+    "name": "Bardoon_Butt_Smack",
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Bardoons Butt"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "You know you want this... I mean, why else do we have hands? Only to: \nPat the butt \nHold the butt, \nCherish the butt, \nForfeit all mortal possessions to butt."
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "Key": "Bardoon_Butt"
       }
     },
     "tags": null,
