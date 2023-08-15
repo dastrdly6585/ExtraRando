@@ -44,6 +44,15 @@ This will give you hints upon picking them up.
 The markers will be added to the "Map" pool.
 One of each marker is added, but for each 100 randomized items one of each type is additionally added.
 
+## Randomize Colo Access
+Add three "ticket" items that grant access to the three trials in the colosseum
+
+## Randomize Pantheon Access
+Add five items to the item pool that opens their respective pantheon, skipping their vanilla requirements. Also adds 5 locations for items, when you met the vanilla condition for opening the pantheon. If the door/seal is already open by the time it has an item left, it will place a shiny left from the door/seal that holds the item.
+
+## Randomize Butt
+Adds Bardoons Butt as an item and location... yeah.
+
 ## No Logic
 Removes all logic from the randomization process. This will greatly decrease the setup time, but obviously could render some seeds **impossible**. It is recommended that some start items and duplicates are used.
 
@@ -51,8 +60,4 @@ Caution is especially advised if you choose to use "road blocking" connections l
 
 # Mod support
 - Works with RSM (RandoSettingsManager)
-- Hot Spring Pins appear on RMM (RandoMapMod)
-
-# To do
-- Adjust RMM Pins + sprites
-- Readd Bardoon Butt setting.
+- Location Pins appear in RandoMapMod
