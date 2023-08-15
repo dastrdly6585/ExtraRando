@@ -45,7 +45,7 @@ The markers will be added to the "Map" pool.
 One of each marker is added, but for each 100 randomized items one of each type is additionally added.
 
 ## Randomize Colo Access
-Add three "ticket" items that grant entrance to the three trials in the colosseum
+Add three "ticket" items that grant access to the three trials in the colosseum
 
 ## Randomize Pantheon Access
 Add five items to the item pool that opens their respective pantheon, skipping their vanilla requirements. Also adds 5 locations for items, when you met the vanilla condition for opening the pantheon. If the door/seal is already open by the time it has an item left, it will place a shiny left from the door/seal that holds the item.
@@ -61,7 +61,3 @@ Caution is especially advised if you choose to use "road blocking" connections l
 # Mod support
 - Works with RSM (RandoSettingsManager)
 - Location Pins appear in RandoMapMod
-
-# To do
-- Adjust RMM Pins + sprites
-- Readd Bardoon Butt setting.
