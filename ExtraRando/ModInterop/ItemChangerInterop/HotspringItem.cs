@@ -2,7 +2,7 @@ using ItemChanger;
 using System.Collections;
 using UnityEngine;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class HotspringItem : AbstractItem
 {

@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExtraRando.ModInterop.ItemChanger.Modules;
+namespace ExtraRando.ModInterop.ItemChangerInterop.Modules;
 
 //public class PantheonEntranceModule : Module
 //{

@@ -4,7 +4,7 @@ using KorzUtils.Data;
 using KorzUtils.Helper;
 using IC = ItemChanger;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class ColoTicketItem : AbstractItem
 {

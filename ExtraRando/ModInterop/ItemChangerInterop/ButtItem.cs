@@ -1,7 +1,7 @@
 ﻿using ItemChanger;
 using ItemChanger.Internal;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class ButtItem : AbstractItem
 {

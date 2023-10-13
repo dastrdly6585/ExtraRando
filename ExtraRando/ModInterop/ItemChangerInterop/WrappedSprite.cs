@@ -3,7 +3,7 @@ using KorzUtils.Helper;
 using System;
 using UnityEngine;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 [Serializable]
 public class WrappedSprite : ISprite

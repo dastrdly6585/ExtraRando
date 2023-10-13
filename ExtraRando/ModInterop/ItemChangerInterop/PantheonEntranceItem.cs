@@ -1,7 +1,7 @@
 ﻿using ItemChanger;
 using KorzUtils.Helper;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class PantheonEntranceItem : AbstractItem
 {

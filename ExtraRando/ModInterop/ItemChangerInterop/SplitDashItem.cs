@@ -1,9 +1,9 @@
-using ExtraRando.ModInterop.ItemChanger.Modules;
+using ExtraRando.ModInterop.ItemChangerInterop.Modules;
 using ItemChanger;
 using ItemChanger.Modules;
 using ItemChanger.UIDefs;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class SplitDashItem : AbstractItem
 {

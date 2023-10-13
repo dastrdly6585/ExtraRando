@@ -3,7 +3,7 @@ using ItemChanger.Locations;
 using KorzUtils.Data;
 using KorzUtils.Helper;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class ButtLocation : AutoLocation
 {

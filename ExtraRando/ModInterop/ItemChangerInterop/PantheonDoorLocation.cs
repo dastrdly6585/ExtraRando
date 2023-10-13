@@ -6,7 +6,7 @@ using MonoMod.Cil;
 using System;
 using System.Linq;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class PantheonDoorLocation : AutoLocation
 {

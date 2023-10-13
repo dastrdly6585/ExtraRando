@@ -4,7 +4,7 @@ using ItemChanger.Locations;
 using KorzUtils.Helper;
 using UnityEngine;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class HotspringLocation : AutoLocation
 {

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public class PinItem : AbstractItem
 {
@@ -124,6 +124,12 @@ public class PinItem : AbstractItem
         ItemNames.Awoken_Dream_Nail,
         ItemNames.Vengeful_Spirit,
         ItemNames.Shade_Soul,
+        ItemManager.Left_Vengeful_Spirit,
+        ItemManager.Left_Shade_Soul,
+        ItemManager.Left_Fireball,
+        ItemManager.Right_Vengeful_Spirit,
+        ItemManager.Right_Shade_Soul,
+        ItemManager.Right_Fireball,
         ItemNames.Desolate_Dive,
         ItemNames.Descending_Dark,
         ItemNames.Howling_Wraiths,
@@ -153,11 +159,20 @@ public class PinItem : AbstractItem
         ItemManager.Key_Ring
     };
 
+    private const string ShellWhisper = "You can find '{0}' at '{1}'.";
+    private const string TokenWhisper = "An important item can be found at '{0}'.";
+    private const string ScarabWhisper = "'{0}' holds junk";
+    private const string GleamingWhisper = "Something potentially useful lies at '{0}'.";
+
     #endregion
 
     #region Properties
 
     public MarkerType Type { get; set; }
+
+    public string LocationName { get; set; }
+
+    public string ItemName { get; set; }
 
     #endregion
 
@@ -177,32 +192,40 @@ public class PinItem : AbstractItem
 
     private IEnumerator WaitForControl()
     {
-        while (HeroController.instance is not null && !HeroController.instance.acceptingInput)
+        while (HeroController.instance?.acceptingInput != true)
             yield return null;
         if (HeroController.instance != null)
             try
             {
-                string hint;
-                if (Type == MarkerType.ShellMarker)
+                if (string.IsNullOrEmpty(LocationName))
                 {
-                    List<AbstractPlacement> viablePlacements = Ref.Settings.Placements.Where(x => !x.Value.AllObtained() && x.Value is not IMultiCostPlacement)
-                        .Select(x => x.Value)
-                        .ToList();
-                    if (!viablePlacements.Any())
-                        yield break;
-                    AbstractPlacement selectedPlacement = viablePlacements[UnityEngine.Random.Range(0, viablePlacements.Count)];
-                    hint = string.Format("It whispers \"{0} is at {1}\".", selectedPlacement.Items.First(x => !x.IsObtained()).name.Replace("_", " ").Replace("-", " "),
-                        selectedPlacement.Name.Replace("_", " ").Replace("-", " "));
+                    if (Type == MarkerType.ShellMarker)
+                    {
+                        List<AbstractPlacement> viablePlacements = Ref.Settings.Placements.Where(x => !x.Value.AllObtained() && x.Value is not IMultiCostPlacement)
+                            .Select(x => x.Value)
+                            .ToList();
+                        if (!viablePlacements.Any())
+                            yield break;
+                        AbstractPlacement selectedPlacement = viablePlacements[UnityEngine.Random.Range(0, viablePlacements.Count)];
+                        LocationName = selectedPlacement.Name.Replace("_", " ").Replace("-", " ");
+                        ItemName = selectedPlacement.Items.First(x => !x.IsObtained()).name.Replace("_", " ").Replace("-", " ");
+                    }
+                    else
+                    {
+                        List<string> matchingLocations;
+                        matchingLocations = GetViableLocations();
+                        if (!matchingLocations.Any())
+                            yield break;
+                        LocationName = matchingLocations[UnityEngine.Random.Range(0, matchingLocations.Count)];
+                    }
                 }
-                else
+                GameHelper.DisplayMessage(Type switch
                 {
-                    List<string> matchingLocations;
-                    matchingLocations = GetViableLocations();
-                    if (!matchingLocations.Any())
-                        yield break;
-                    hint = string.Format("The marker whispers {0}.", matchingLocations[UnityEngine.Random.Range(0, matchingLocations.Count)]);
-                }
-                GameHelper.DisplayMessage(hint);
+                    MarkerType.GleamingMarker => string.Format(GleamingWhisper, LocationName),
+                    MarkerType.ScarabMarker => string.Format(ScarabWhisper, LocationName),
+                    MarkerType.TokenMarker => string.Format(TokenWhisper, LocationName),
+                    _ => string.Format(ShellWhisper, ItemName, LocationName)
+                });
             }
             catch (Exception exception)
             {

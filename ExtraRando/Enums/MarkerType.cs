@@ -1,4 +1,4 @@
-using ExtraRando.ModInterop.ItemChanger;
+using ExtraRando.ModInterop.ItemChangerInterop;
 
 namespace ExtraRando.Enums;
 

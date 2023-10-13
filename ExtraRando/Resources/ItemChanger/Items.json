@@ -43,7 +43,7 @@
         "Value": "Two for the price of one!"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Scream"
       }
     }
@@ -82,7 +82,7 @@
         "Value": "Two for the price of one!"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Dive"
       }
     }
@@ -131,7 +131,7 @@
         "Value": "Two for the price of one!"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Fireball"
       }
     }
@@ -149,10 +149,10 @@
       },
       "shopDesc": {
         "$type": "ItemChanger.BoxedString, ItemChanger",
-        "Value": "What kind of Donkey would leave this on the ground? Hehe..."
+        "Value": "What kind of donkey would leave this on the ground? Hehe..."
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Keyring"
       }
     },
@@ -160,7 +160,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitDashItem, ExtraRando",
     "isLeft": true,
     "stages": 1,
     "name": "Progressive_Left_Cloak",
@@ -211,7 +211,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitDashItem, ExtraRando",
     "isLeft": false,
     "stages": 1,
     "name": "Progressive_Right_Cloak",
@@ -262,7 +262,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitDashItem, ExtraRando",
     "isLeft": true,
     "stages": 2,
     "name": "Left_Cloak",
@@ -313,7 +313,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.SplitDashItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitDashItem, ExtraRando",
     "isLeft": false,
     "stages": 2,
     "name": "Right_Cloak",
@@ -411,13 +411,13 @@
         "Value": "Two for the price of one!"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Dash"
       }
     }
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringItem, ExtraRando",
     "name": "Hot_Spring_Water",
     "UIDef": {
       "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
@@ -430,7 +430,7 @@
         "Value": "You want a hot spring to go? Sure thing."
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "HotSpring"
       }
     },
@@ -443,7 +443,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PinItem, ExtraRando",
     "name": "Scarab_Marker_Hint",
     "Type": 0,
     "UIDef": {
@@ -461,11 +461,16 @@
         "key": "ShopIcons.Marker_B"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.PersistentItemTag, ItemChanger",
+        "Persistence": "SemiPersistent"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PinItem, ExtraRando",
     "name": "Shell_Marker_Hint",
     "Type": 3,
     "UIDef": {
@@ -483,11 +488,16 @@
         "key": "ShopIcons.Marker_R"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.PersistentItemTag, ItemChanger",
+        "Persistence": "SemiPersistent"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PinItem, ExtraRando",
     "name": "Gleaming_Marker_Hint",
     "Type": 1,
     "UIDef": {
@@ -505,11 +515,16 @@
         "key": "ShopIcons.Marker_W"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.PersistentItemTag, ItemChanger",
+        "Persistence": "SemiPersistent"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PinItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PinItem, ExtraRando",
     "name": "Token_Marker_Hint",
     "Type": 2,
     "UIDef": {
@@ -527,11 +542,16 @@
         "key": "ShopIcons.Marker_Y"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.PersistentItemTag, ItemChanger",
+        "Persistence": "SemiPersistent"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Master",
     "fieldName": "bossDoorStateTier1",
     "UIDef": {
@@ -545,7 +565,7 @@
         "Value": "You can either spend 300+ hours since the energy regenerates at a rate at 1 per hour OR just buy this :) - (Insert any mobile games name here)"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Master"
       }
     },
@@ -553,7 +573,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.ColoTicketItem, ExtraRando",
     "name": "Colo_Ticket-Bronze",
     "Trial": "Bronze",
     "UIDef": {
@@ -567,7 +587,7 @@
         "Value": "Winner Winner... no not in millions years would I say that unironically."
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Bronze_Pass"
       }
     },
@@ -575,7 +595,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.ColoTicketItem, ExtraRando",
     "name": "Colo_Ticket-Silver",
     "Trial": "Silver",
     "UIDef": {
@@ -589,7 +609,7 @@
         "Value": "You could see this as some kind of battle pass."
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Silver_Pass"
       }
     },
@@ -597,7 +617,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.ColoTicketItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.ColoTicketItem, ExtraRando",
     "name": "Colo_Ticket-Gold",
     "Trial": "Gold",
     "UIDef": {
@@ -611,7 +631,7 @@
         "Value": "Is this the new battle royale game?"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Gold_Pass"
       }
     },
@@ -619,7 +639,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Artist",
     "fieldName": "bossDoorStateTier2",
     "UIDef": {
@@ -633,7 +653,7 @@
         "Value": "You can either spend 300+ hours since the energy regenerates at a rate at 1 per hour OR just buy this :) - (Insert any mobile games name here)"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Artist"
       }
     },
@@ -641,7 +661,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Sage",
     "FieldName": "bossDoorStateTier3",
     "UIDef": {
@@ -655,7 +675,7 @@
         "Value": "You can either spend 300+ hours since the energy regenerates at a rate at 1 per hour OR just buy this :) - (Insert any mobile games name here)"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Sage"
       }
     },
@@ -663,7 +683,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Knight",
     "FieldName": "bossDoorStateTier4",
     "UIDef": {
@@ -677,7 +697,7 @@
         "Value": "You can either spend 300+ hours since the energy regenerates at a rate at 1 per hour OR just buy this :) - (Insert any mobile games name here)"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Knight"
       }
     },
@@ -685,7 +705,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonEntranceItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonEntranceItem, ExtraRando",
     "name": "Pantheon_Access-Hallownest",
     "FieldName": "bossDoorStateTier5",
     "UIDef": {
@@ -699,7 +719,7 @@
         "Value": "You can either spend 300+ hours since the energy regenerates at a rate at 1 per hour OR just buy this :) - (Insert any mobile games name here)"
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Pantheon_Hallownest"
       }
     },
@@ -707,7 +727,7 @@
     "obtainState": "Unobtained"
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.ButtItem, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.ButtItem, ExtraRando",
     "name": "Bardoon_Butt_Smack",
     "UIDef": {
       "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
@@ -720,8 +740,333 @@
         "Value": "You know you want this... I mean, why else do we have hands? Only to: \nPat the butt \nHold the butt, \nCherish the butt, \nForfeit all mortal possessions to butt."
       },
       "sprite": {
-        "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Bardoon_Butt"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Left_Vengeful_Spirit",
+    "IsLeft": true,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Left Vengeful Spirit"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball1"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing left, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "ShopIcons.Fireball"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Right_Vengeful_Spirit",
+    "IsLeft": false,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Right Vengeful Spirit"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball1"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing right, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "ShopIcons.Fireball"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Left_Shade_Soul",
+    "IsLeft": true,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Left Shade Soul"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball2"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing left, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "ShopIcons.Fireball2"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Right_Shade_Soul",
+    "IsLeft": false,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Right Shade Soul"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball2"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing right, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "ShopIcons.Fireball2"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Left_Fireball",
+    "IsLeft": true,
+    "Merged": true,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Left Fireball"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball2"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing left, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
+        "Key": "Fireball"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitFireballItem, ExtraRando",
+    "name": "Right_Fireball",
+    "IsLeft": false,
+    "Merged": true,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.BigUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Right Fireball"
+      },
+      "bigSprite": {
+        "$type": "ItemChanger.ItemChangerSprite, ItemChanger",
+        "key": "Prompts.Fireball2"
+      },
+      "take": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_ITEM_INTRO3",
+        "sheet": "Prompts"
+      },
+      "press": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "BUTTON_DESC_TAP",
+        "sheet": "Prompts"
+      },
+      "buttonSkin": {
+        "$type": "ItemChanger.UIDefs.HeroActionButtonSkin, ItemChanger",
+        "button": "QUICK_CAST"
+      },
+      "descOne": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_1",
+        "sheet": "Prompts"
+      },
+      "descTwo": {
+        "$type": "ItemChanger.LanguageString, ItemChanger",
+        "key": "GET_FIREBALL2_2",
+        "sheet": "Prompts"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "value": "You better only cast this while facing right, otherwise the TC police will catch you."
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
+        "Key": "Fireball"
+      }
+    },
+    "tags": null,
+    "obtainState": "Unobtained"
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.DirtmouthStagItem, ExtraRando",
+    "fieldName": "Dirtmouth_Stag_Key",
+    "name": "Dirtmouth_Stag_Key",
+    "setValue": true,
+    "UIDef": {
+      "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
+      "name": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "Stag Station Key"
+      },
+      "shopDesc": {
+        "$type": "ItemChanger.BoxedString, ItemChanger",
+        "Value": "...How?"
+      },
+      "sprite": {
+        "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
+        "Key": "Dirtmouth_Stag_Key"
       }
     },
     "tags": null,

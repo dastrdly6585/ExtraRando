@@ -6,6 +6,8 @@ public class RandoSettings
 
     public bool SplitShadeCloak { get; set; }
 
+    public bool SplitFireball { get; set; }
+
     public bool ScarceItemPool { get; set; }
 
     public bool RandomizeHotSprings { get; set; }
@@ -17,6 +19,10 @@ public class RandoSettings
     public bool RandomizePantheonAccess { get; set; }
 
     public bool RandomizeButt { get; set; }
+
+    public bool RandomizeAwfulLocations { get; set; }
+
+    public bool SplitDirtmouthStag { get; set; }
 
     public bool NoLogic { get; set; }
 }

@@ -5,7 +5,7 @@ using Modding;
 using MonoMod.Cil;
 using System;
 
-namespace ExtraRando.ModInterop.ItemChanger.Modules;
+namespace ExtraRando.ModInterop.ItemChangerInterop.Modules;
 
 public class SplitShadeCloakModule : Module
 {

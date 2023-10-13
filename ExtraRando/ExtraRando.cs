@@ -1,4 +1,4 @@
-using ExtraRando.ModInterop.ItemChanger;
+using ExtraRando.ModInterop.ItemChangerInterop;
 using ExtraRando.ModInterop.Randomizer;
 using ExtraRando.SaveManagement;
 using Modding;

@@ -1,0 +1,487 @@
+[
+  // macros
+  {
+    "name": "ALLBALDURS",
+    "old": "FIREBALL",
+    "replacement": "FULLFIREBALL"
+  },
+  {
+    "name": "LEFTFIREBALL",
+    "old": "FIREBALL",
+    "replacement": "FIREBALLLEFT"
+  },
+  {
+    "name": "RIGHTFIREBALL",
+    "old": "FIREBALL",
+    "replacement": "FIREBALLRIGHT"
+  },
+  {
+    "name": "SPELLAIRSTALL",
+    "old": "FIREBALL",
+    "replacement": "FULLFIREBALL"
+  },
+  // transitions
+  {
+    "name": "Fungus1_26[right1]",
+    "old": "FIREBALL",
+    "replacement": "LEFTFIREBALL"
+  },
+  {
+    "name": "Fungus1_26[left1]",
+    "old": "FIREBALL",
+    "replacement": "RIGHTFIREBALL"
+  },
+  {
+    "name": "Fungus1_26[door_SlugShrine]",
+    "old": "FIREBALL",
+    "replacement": "RIGHTFIREBALL"
+  },
+  {
+    "name": "Crossroads_04[door_charmshop]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Crossroads_04[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Crossroads_21[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_04[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_04[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_06[bot1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_11[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_26[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus1_28[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus3_26[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus2_01[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus2_06[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus2_06[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus2_21[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_39[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_39[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_39[door1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_East_04[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_01[left2]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_01[right2]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "GG_Waterways[door1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Ruins2_06[left2]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Ruins2_07[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Ruins2_07[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Ruins2_07[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "RestingGrounds_10[top2]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "ANYSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_03[top1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_06[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_10[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_10[bot1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_28[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Mines_28[door1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus3_40[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "White_Palace_13[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_03[left2]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_04[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_18[left1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "White_Palace_15[right1]",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  // locations
+  {
+    "name": "Monomon",
+    "old": "FIREBALL",
+    "replacement": "RIGHTFIREBALL"
+  },
+  {
+    "name": "Rancid_Egg-Waterways_West_Bluggsac",
+    "old": "FIREBALL",
+    "replacement": "LEFTFIREBALL"
+  },
+  {
+    "name": "Mantis_Claw",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Crystal_Heart",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Love_Key",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Charm_Notch-Fog_Canyon",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Rancid_Egg-Crystal_Peak_Dive_Entrance",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Wanderer's_Journal-Fungal_Wastes_Thorns_Gauntlet",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Hallownest_Seal-Crossroads_Well",
+    "old": "SPELLAIRSTALL",
+    "replacement": "ANYSPELLAIRSTALL"
+  },
+  {
+    "name": "Hallownest_Seal-Greenpath",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Hallownest_Seal-Fog_Canyon_East",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Kingdom's_Edge_Oro",
+    "old": "SPELLAIRSTALL",
+    "replacement": "ANYSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-King's_Station",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Crystal_Peak_Spike",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Crystal_Peak_Mimic",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Crystal_Heart",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Queen's_Gardens_Top",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Greenpath_Map",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Queen's_Gardens_Stag",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grimmkin_Flame-Crystal_Peak",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Journal_Entry-Charged_Lumafly",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Split_Crystal_Heart",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Cliffs_Main_3",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Greenpath_Below_Hornet",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Greenpath_Acid_Bridge",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Mantis_Outskirts_Alcove",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Mantis_Village_Below_Lore",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Mantis_Village_Above_Lever",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Above_Mantis_Lords_1",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Fungal_Above_City_Entrance",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Geo_Rock-Queen's_Gardens_Above_Marmu",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Distant_Village",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Lower_Kingdom's_Edge_2",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Top_Left_Queen's_Gardens",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Crystal_Heart_1",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Crystal_Heart_2",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Waterways_Entrance",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Soul_Totem-Waterways_East",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Lore_Tablet-Mantis_Village",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Grub-Basin_Requires_Wings",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+
+  // waypoint
+  {
+    "name": "Rescued_Bretta",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Opened_Gardens_Stag_Exit",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Bench-Gardens_Stag",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Crossroads_18",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Fungus2_13",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Deepnest_East_04",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_09",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  },
+  {
+    "name": "Abyss_01",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "White_Palace_13",
+    "old": "SPELLAIRSTALL",
+    "replacement": "RIGHTSPELLAIRSTALL"
+  },
+  {
+    "name": "Lever-City_Fountain",
+    "old": "SPELLAIRSTALL",
+    "replacement": "FULLSPELLAIRSTALL"
+  },
+  {
+    "name": "Crossroads_18",
+    "old": "SPELLAIRSTALL",
+    "replacement": "LEFTSPELLAIRSTALL"
+  }
+]

@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ExtraRando.ModInterop.ItemChanger;
+namespace ExtraRando.ModInterop.ItemChangerInterop;
 
 public static class ItemManager
 {
@@ -35,6 +35,13 @@ public static class ItemManager
     public const string Pantheon_Access_Knight = "Pantheon_Access-Knight"; 
     public const string Pantheon_Access_Hallownest = "Pantheon_Access-Hallownest";
     public const string Bardoon_Butt_Smack = "Bardoon_Butt_Smack";
+    public const string Left_Vengeful_Spirit = "Left_Vengeful_Spirit";
+    public const string Right_Vengeful_Spirit = "Right_Vengeful_Spirit";
+    public const string Left_Shade_Soul = "Left_Shade_Soul";
+    public const string Right_Shade_Soul = "Right_Shade_Soul";
+    public const string Left_Fireball = "Left_Fireball";
+    public const string Right_Fireball = "Right_Fireball";
+    public const string Dirtmouth_Stag_Key = "Dirtmouth_Stag_Key";
 
     #endregion
 
@@ -52,6 +59,11 @@ public static class ItemManager
     public const string Pantheon_Knight = "Pantheon-Knight";
     public const string Pantheon_Hallownest = "Pantheon-Hallownest";
     public const string Bardoon_Butt = "Bardoon_Butt";
+    public const string Split_Vengeful_Spirit = "Split_Vengeful_Spirit";
+    public const string Split_Shade_Soul = "Split_Shade_Soul";
+    public const string GPZ_10 = "GPZ_10";
+    public const string White_Defender_5 = "White_Defender_5";
+    public const string Dirtmouth_Stag_Door = "Dirtmouth_Stag_Door";
 
     #endregion
 

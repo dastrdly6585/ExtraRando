@@ -1,34 +1,34 @@
 [
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Crossroads-Hot_Spring",
     "sceneName": "Crossroads_30",
     "flingType": "DirectDeposit",
     "tags": null
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Colosseum-Hot_Spring",
     "sceneName": "Room_Colosseum_02",
     "flingType": "DirectDeposit",
     "tags": null
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Deepnest-Hot_Spring",
     "sceneName": "Deepnest_30",
     "flingType": "DirectDeposit",
     "tags": null
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Bathhouse-Hot_Spring",
     "sceneName": "Ruins_Bathhouse",
     "flingType": "DirectDeposit",
     "tags": null
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Lower_Godhome-Hot_Spring",
     "sceneName": "GG_Atrium",
     "flingType": "DirectDeposit",
@@ -38,7 +38,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "HotSpring"
           },
           "SceneNames": "GG_Waterways",
@@ -59,7 +59,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.HotspringLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringLocation, ExtraRando",
     "name": "Upper_Godhome-Hot_Spring",
     "sceneName": "GG_Atrium_Roof",
     "flingType": "DirectDeposit",
@@ -69,7 +69,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "HotSpring"
           },
           "SceneNames": "GG_Waterways",
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonDoorLocation, ExtraRando",
     "name": "Pantheon-Master",
     "sceneName": "GG_Atrium",
     "PantheonNumber": 1,
@@ -101,7 +101,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Pantheon_Master"
           },
           "SceneNames": "GG_Waterways",
@@ -122,7 +122,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonDoorLocation, ExtraRando",
     "name": "Pantheon-Artist",
     "sceneName": "GG_Atrium",
     "PantheonNumber": 2,
@@ -133,7 +133,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Pantheon_Artist"
           },
           "SceneNames": "GG_Waterways",
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonDoorLocation, ExtraRando",
     "name": "Pantheon-Sage",
     "sceneName": "GG_Atrium",
     "PantheonNumber": 3,
@@ -165,7 +165,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Pantheon_Sage"
           },
           "SceneNames": "GG_Waterways",
@@ -186,7 +186,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonDoorLocation, ExtraRando",
     "name": "Pantheon-Knight",
     "sceneName": "GG_Atrium",
     "PantheonNumber": 4,
@@ -197,7 +197,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Pantheon_Knight"
           },
           "SceneNames": "GG_Waterways",
@@ -218,7 +218,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.PantheonDoorLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.PantheonDoorLocation, ExtraRando",
     "name": "Pantheon-Hallownest",
     "sceneName": "GG_Atrium_Roof",
     "PantheonNumber": 5,
@@ -229,7 +229,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Pantheon_Hallownest"
           },
           "SceneNames": "GG_Waterways",
@@ -250,7 +250,7 @@
     ]
   },
   {
-    "$type": "ExtraRando.ModInterop.ItemChanger.ButtLocation, ExtraRando",
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.ButtLocation, ExtraRando",
     "name": "Bardoon_Butt",
     "sceneName": "Deepnest_East_04",
     "PantheonNumber": 5,
@@ -261,7 +261,7 @@
         "Properties": {
           "ModSource": "ExtraRando",
           "PinSprite": {
-            "$type": "ExtraRando.ModInterop.ItemChanger.WrappedSprite, ExtraRando",
+            "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
             "Key": "Bardoon_Butt"
           },
           "SceneNames": "GG_Waterways",
@@ -280,5 +280,45 @@
         "Loaded": true
       }
     ]
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.SplitVengefulSpiritLocation, ExtraRando",
+    "name": "Split_Vengeful_Spirit",
+    "sceneName": "Crossroads_ShamanTemple",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+    "x": 28.56,
+    "y": 56.41,
+    "name": "Split_Shade_Soul",
+    "sceneName": "Ruins1_31b",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.GoldenGreyPrinceLocation, ExtraRando",
+    "name": "GPZ_10",
+    "sceneName": "Room_Bretta_Basement",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ExtraRando.ModInterop.ItemChangerInterop.WhiteDefenderHonorLocation, ExtraRando",
+    "name": "White_Defender_5",
+    "sceneName": "Waterways_15",
+    "flingType": "DirectDeposit",
+    "tags": null
+  },
+  {
+    "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+    "x": 139.58,
+    "y": 11.41,
+    "elevation": 0,
+    "managed": false,
+    "forceShiny": true,
+    "name": "Dirtmouth_Stag_Door",
+    "sceneName": "Town"
   }
 ]
