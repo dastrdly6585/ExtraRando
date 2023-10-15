@@ -12,7 +12,7 @@ public class RandoSettings
 
     public bool RandomizeHotSprings { get; set; }
 
-    public bool RandomizeMarkers { get; set; }
+    public bool AddHintMarkers { get; set; }
 
     public bool RandomizeColoAccess { get; set; }
 
@@ -22,7 +22,15 @@ public class RandoSettings
 
     public bool RandomizeAwfulLocations { get; set; }
 
-    public bool SplitDirtmouthStag { get; set; }
+    public bool BlockEarlyGameStags { get; set; }
 
     public bool NoLogic { get; set; }
+
+    public int JunkItemHints { get; set; }
+
+    public int PotentialItemHints { get; set; }
+
+    public int UsefulItemHints { get; set; }
+
+    public int RandomLocationHints { get; set; }
 }

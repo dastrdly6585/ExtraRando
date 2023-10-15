@@ -91,9 +91,14 @@ public class PinItem : AbstractItem
         ItemNames.Dash_Slash,
         ItemNames.Cyclone_Slash,
         "Nail_Upgrade", // For Rando plus
-        "Bronze_Trial_Ticket", // Curse Rando
-        "Silver_Trial_Ticket", // Curse Rando
-        "Gold_Trial_Ticket" // Curse Rando
+        ItemManager.Colo_Ticket_Bronze, // Curse Rando
+        ItemManager.Colo_Ticket_Silver, // Curse Rando
+        ItemManager.Colo_Ticket_Gold, // Curse Rando
+        ItemManager.Pantheon_Access_Master,
+        ItemManager.Pantheon_Access_Artist,
+        ItemManager.Pantheon_Access_Sage,
+        ItemManager.Pantheon_Access_Knight,
+        ItemManager.Pantheon_Access_Hallownest
     };
 
     private static readonly string[] _viableUsefulItems = new string[]

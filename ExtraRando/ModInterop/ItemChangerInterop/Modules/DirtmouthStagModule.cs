@@ -64,6 +64,10 @@ public class DirtmouthStagModule : Module
         return orig;
     }
 
+    private bool ModHooks_GetPlayerBoolHook(string name, bool orig) => name == nameof(PlayerData.openedCrossroads)
+            ? orig && HasDirtmouthKey
+            : orig;
+
     #endregion
 
     public override void Initialize()
@@ -71,12 +75,14 @@ public class DirtmouthStagModule : Module
         Events.AddFsmEdit(new("Stag_station", "Check Opened"), ModifyOutsideDoor);
         Events.AddFsmEdit(new("Station Door", "Control"), ModifyInsideDoor);
         ModHooks.SetPlayerBoolHook += ModHooks_SetPlayerBoolHook;
+        ModHooks.GetPlayerBoolHook += ModHooks_GetPlayerBoolHook;
     }
 
     public override void Unload()
     {
         Events.RemoveFsmEdit(new("Stag_station", "Check Opened"), ModifyOutsideDoor);
         ModHooks.SetPlayerBoolHook -= ModHooks_SetPlayerBoolHook;
+        ModHooks.GetPlayerBoolHook -= ModHooks_GetPlayerBoolHook;
         Events.RemoveFsmEdit(new("Station Door", "Control"), ModifyInsideDoor);
     }
 }

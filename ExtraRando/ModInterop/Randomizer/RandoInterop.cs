@@ -249,63 +249,6 @@ public static class RandoInterop
             builder.AddLocationByName(ItemManager.Pantheon_Knight);
             builder.AddLocationByName(ItemManager.Pantheon_Hallownest);
         }
-        if (ExtraRando.Instance.Settings.RandomizeMarkers)
-        {
-            int totalItems = 0;
-            List<ItemGroupBuilder> availablePools = new();
-            foreach (StageBuilder stage in builder.Stages)
-                foreach (ItemGroupBuilder itemGroup in stage.Groups.Where(x => x is ItemGroupBuilder).Select(x => x as ItemGroupBuilder))
-                {
-                    if (!availablePools.Contains(itemGroup))
-                        availablePools.Add(itemGroup);
-                    totalItems += itemGroup.Items.EnumerateWithMultiplicity().Count();
-                }
-            builder.AddItemByName(ItemManager.Scarab_Marker_Hint, 1 + totalItems / 100);
-            builder.AddItemByName(ItemManager.Shell_Marker_Hint, 1 + totalItems / 100);
-            builder.AddItemByName(ItemManager.Gleaming_Marker_Hint, 1 + totalItems / 100);
-            builder.AddItemByName(ItemManager.Token_Marker_Hint, 1 + totalItems / 100);
-
-            builder.EditItemRequest(ItemManager.Scarab_Marker_Hint, info =>
-            {
-                info.getItemDef = () => new()
-                {
-                    MajorItem = false,
-                    PriceCap = 50,
-                    Name = ItemManager.Scarab_Marker_Hint,
-                    Pool = "Map"
-                };
-            });
-            builder.EditItemRequest(ItemManager.Shell_Marker_Hint, info =>
-            {
-                info.getItemDef = () => new()
-                {
-                    MajorItem = false,
-                    PriceCap = 50,
-                    Name = ItemManager.Shell_Marker_Hint,
-                    Pool = "Map"
-                };
-            });
-            builder.EditItemRequest(ItemManager.Gleaming_Marker_Hint, info =>
-            {
-                info.getItemDef = () => new()
-                {
-                    MajorItem = false,
-                    PriceCap = 50,
-                    Name = ItemManager.Gleaming_Marker_Hint,
-                    Pool = "Map"
-                };
-            });
-            builder.EditItemRequest(ItemManager.Token_Marker_Hint, info =>
-            {
-                info.getItemDef = () => new()
-                {
-                    MajorItem = false,
-                    PriceCap = 50,
-                    Name = ItemManager.Token_Marker_Hint,
-                    Pool = "Map"
-                };
-            });
-        }
         if (ExtraRando.Instance.Settings.RandomizeButt)
         {
             builder.AddItemByName(ItemManager.Bardoon_Butt_Smack);
@@ -398,11 +341,11 @@ public static class RandoInterop
             builder.AddLocationByName(ItemManager.GPZ_10);
             builder.AddLocationByName(ItemManager.White_Defender_5);
         }
-        if (ExtraRando.Instance.Settings.SplitDirtmouthStag)
+        if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
             builder.AddToVanilla(ItemManager.Dirtmouth_Stag_Key, ItemManager.Dirtmouth_Stag_Door);
     }
 
-    private static void ApplyScarceItemPool(RequestBuilder builder)
+    private static void ApplySpecialSettings(RequestBuilder builder)
     {
         if (!ExtraRando.Instance.Settings.Enabled)
             return;
@@ -433,8 +376,22 @@ public static class RandoInterop
                     builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Descending_Dark}");
                     builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Shade_Soul}");
 
-                    builder.AddItemByName(ItemManager.Dive_Spell);
-                    builder.AddItemByName(ItemManager.Scream_Spell);
+                    if (builder.IsAtStart(ItemNames.Howling_Wraiths))
+                    {
+                        builder.RemoveFromStart(ItemNames.Howling_Wraiths);
+                        builder.AddToStart(ItemManager.Scream_Spell);
+                    }
+                    else
+                        builder.AddItemByName(ItemManager.Scream_Spell);
+
+                    if (builder.IsAtStart(ItemNames.Desolate_Dive))
+                    {
+                        builder.RemoveFromStart(ItemNames.Desolate_Dive);
+                        builder.AddToStart(ItemManager.Dive_Spell);
+                    }
+                    else
+                        builder.AddItemByName(ItemManager.Dive_Spell);
+
 
                     if (builder.gs.DuplicateItemSettings.LevelOneSpells || builder.gs.DuplicateItemSettings.LevelTwoSpells)
                     {
@@ -557,6 +514,65 @@ public static class RandoInterop
                 itemsToRemove.RemoveAt(0);
             }
         }
+        if (ExtraRando.Instance.Settings.AddHintMarkers)
+        {
+            if (ExtraRando.Instance.Settings.JunkItemHints > 0)
+            {
+                builder.AddItemByName(ItemManager.Scarab_Marker_Hint, ExtraRando.Instance.Settings.JunkItemHints);
+                builder.EditItemRequest(ItemManager.Scarab_Marker_Hint, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = false,
+                        PriceCap = 50,
+                        Name = ItemManager.Scarab_Marker_Hint,
+                        Pool = "Map"
+                    };
+                });
+            }
+            if (ExtraRando.Instance.Settings.PotentialItemHints > 0)
+            {
+                builder.AddItemByName(ItemManager.Gleaming_Marker_Hint, ExtraRando.Instance.Settings.PotentialItemHints);
+                builder.EditItemRequest(ItemManager.Gleaming_Marker_Hint, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = false,
+                        PriceCap = 50,
+                        Name = ItemManager.Gleaming_Marker_Hint,
+                        Pool = "Map"
+                    };
+                });
+            }
+            if (ExtraRando.Instance.Settings.UsefulItemHints > 0)
+            {
+                builder.AddItemByName(ItemManager.Token_Marker_Hint, ExtraRando.Instance.Settings.UsefulItemHints);
+                builder.EditItemRequest(ItemManager.Token_Marker_Hint, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = false,
+                        PriceCap = 50,
+                        Name = ItemManager.Token_Marker_Hint,
+                        Pool = "Map"
+                    };
+                });
+            }
+            if (ExtraRando.Instance.Settings.RandomLocationHints > 0)
+            {
+                builder.AddItemByName(ItemManager.Shell_Marker_Hint, ExtraRando.Instance.Settings.RandomLocationHints);
+                builder.EditItemRequest(ItemManager.Shell_Marker_Hint, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = false,
+                        PriceCap = 50,
+                        Name = ItemManager.Shell_Marker_Hint,
+                        Pool = "Map"
+                    };
+                });
+            }
+        }
     }
 
     private static void ModifyLogic(GenerationSettings settings, LogicManagerBuilder builder)
@@ -577,6 +593,49 @@ public static class RandoInterop
         {
             using Stream substituteFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Substitutions.json");
             builder.DeserializeJson(LogicManagerBuilder.JsonType.LogicSubst, substituteFile);
+
+            builder.LogicLookup.Add(ItemManager.Split_Vengeful_Spirit, builder.LogicLookup["Vengeful_Spirit"]);
+            builder.LogicLookup.Add(ItemManager.Split_Shade_Soul, builder.LogicLookup["Shade_Soul"]);
+
+            builder.GetOrAddTerm("FIREBALLLEFT");
+            builder.GetOrAddTerm("FIREBALLRIGHT");
+
+            builder.AddItem(new MultiItem(ItemManager.Left_Vengeful_Spirit, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 1),
+                new(builder.GetTerm("FIREBALLLEFT"), 1),
+                new(builder.GetTerm("SPELLS"), 1)
+            }));
+            builder.AddItem(new MultiItem(ItemManager.Left_Shade_Soul, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 1),
+                new(builder.GetTerm("FIREBALLLEFT"), 1),
+                new(builder.GetTerm("SPELLS"), 1)
+            }));
+            builder.AddItem(new MultiItem(ItemManager.Right_Vengeful_Spirit, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 1),
+                new(builder.GetTerm("FIREBALLRIGHT"), 1),
+                new(builder.GetTerm("SPELLS"), 1)
+            }));
+            builder.AddItem(new MultiItem(ItemManager.Right_Shade_Soul, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 1),
+                new(builder.GetTerm("FIREBALLRIGHT"), 1),
+                new(builder.GetTerm("SPELLS"), 1)
+            }));
+            builder.AddItem(new MultiItem(ItemManager.Left_Fireball, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 2),
+                new(builder.GetTerm("FIREBALLLEFT"), 2),
+                new(builder.GetTerm("SPELLS"), 2)
+            }));
+            builder.AddItem(new MultiItem(ItemManager.Right_Fireball, new RandomizerCore.TermValue[]
+            {
+                new(builder.GetTerm("FIREBALL"), 2),
+                new(builder.GetTerm("FIREBALLRIGHT"), 2),
+                new(builder.GetTerm("SPELLS"), 2)
+            }));
         }
 
         if (ExtraRando.Instance.Settings.ScarceItemPool)
@@ -621,7 +680,7 @@ public static class RandoInterop
         }
         if (ExtraRando.Instance.Settings.RandomizeHotSprings)
             builder.AddItem(new EmptyItem(ItemManager.Hot_Spring_Water));
-        if (ExtraRando.Instance.Settings.RandomizeMarkers)
+        if (ExtraRando.Instance.Settings.AddHintMarkers)
         {
             builder.AddItem(new EmptyItem(ItemManager.Gleaming_Marker_Hint));
             builder.AddItem(new EmptyItem(ItemManager.Scarab_Marker_Hint));
@@ -664,51 +723,6 @@ public static class RandoInterop
         }
         if (ExtraRando.Instance.Settings.RandomizeButt)
             builder.AddItem(new EmptyItem(ItemManager.Bardoon_Butt_Smack));
-        if (ExtraRando.Instance.Settings.SplitFireball)
-        {
-            builder.LogicLookup.Add(ItemManager.Split_Vengeful_Spirit, builder.LogicLookup["Vengeful_Spirit"]);
-            builder.LogicLookup.Add(ItemManager.Split_Shade_Soul, builder.LogicLookup["Shade_Soul"]);
-
-            builder.GetOrAddTerm("FIREBALLLEFT");
-            builder.GetOrAddTerm("FIREBALLRIGHT");
-
-            builder.AddItem(new MultiItem(ItemManager.Left_Vengeful_Spirit, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 1),
-                new(builder.GetTerm("FIREBALLLEFT"), 1),
-                new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Left_Shade_Soul, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 1),
-                new(builder.GetTerm("FIREBALLLEFT"), 1),
-                new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Vengeful_Spirit, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 1),
-                new(builder.GetTerm("FIREBALLRIGHT"), 1),
-                new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Shade_Soul, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 1),
-                new(builder.GetTerm("FIREBALLRIGHT"), 1),
-                new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Left_Fireball, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 2),
-                new(builder.GetTerm("FIREBALLLEFT"), 2),
-                new(builder.GetTerm("SPELLS"), 2)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Fireball, new RandomizerCore.TermValue[]
-            {
-                new(builder.GetTerm("FIREBALL"), 2),
-                new(builder.GetTerm("FIREBALLRIGHT"), 2),
-                new(builder.GetTerm("SPELLS"), 2)
-            }));
-        }
         if (ExtraRando.Instance.Settings.RandomizeAwfulLocations)
         {
             // As this settings allows White Defender to be accessable with one dreamer we need to adjust that.
@@ -720,10 +734,11 @@ public static class RandoInterop
             builder.AddLogicDef(new(ItemManager.GPZ_10, "Defeated_Grey_Prince_Zote"));
             builder.LogicLookup[ItemManager.GPZ_10] = builder.LogicLookup["Boss_Essence-Grey_Prince_Zote"];
         }
-        if (ExtraRando.Instance.Settings.SplitDirtmouthStag)
+        if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
         {
             builder.DoLogicEdit(new("Town[door_station]", "(ORIG) + Dirtmouth_Stag_Key | Town[door_station]"));
             builder.DoLogicEdit(new("Room_Town_Stag_Station[left1]", "(ORIG) + Dirtmouth_Stag_Key | Room_Town_Stag_Station[left1]"));
+            builder.DoLogicEdit(new("Crossroads_47[right1]", "(ORIG) + Dirtmouth_Stag_Key | Crossroads_47[right1]"));
             Term stagTerm = builder.GetOrAddTerm("Dirtmouth_Stag_Key");
             builder.AddItem(new BoolItem(ItemManager.Dirtmouth_Stag_Key, stagTerm));
         }
@@ -752,15 +767,18 @@ public static class RandoInterop
         int hashModifier = 1;
         if (ExtraRando.Instance.Settings.NoLogic)
             hashModifier += 23;
-        if (ExtraRando.Instance.Settings.SplitDirtmouthStag)
+        if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
             hashModifier += 3;
+        // In case no marker is placed but this setting is enabled.
+        if (ExtraRando.Instance.Settings.AddHintMarkers)
+            hashModifier += 5;
         return hashModifier;
     }
 
     private static void UIManager_StartNewGame(On.UIManager.orig_StartNewGame orig, UIManager self, bool permaDeath, bool bossRush)
     {
         orig(self, permaDeath, bossRush);
-        if (RandomizerMod.RandomizerMod.IsRandoSave && ExtraRando.Instance.Settings.Enabled && ExtraRando.Instance.Settings.SplitDirtmouthStag)
+        if (RandomizerMod.RandomizerMod.IsRandoSave && ExtraRando.Instance.Settings.Enabled && ExtraRando.Instance.Settings.BlockEarlyGameStags)
         {
             AbstractPlacement placement = Finder.GetLocation(ItemManager.Dirtmouth_Stag_Door).Wrap();
             placement.Add(Finder.GetItem(ItemManager.Dirtmouth_Stag_Key));
@@ -775,7 +793,7 @@ public static class RandoInterop
     internal static void Initialize()
     {
         RandoMenu.Initialize();
-        RequestBuilder.OnUpdate.Subscribe(float.MaxValue - 1f, ApplyScarceItemPool);
+        RequestBuilder.OnUpdate.Subscribe(float.MaxValue - 1f, ApplySpecialSettings);
         RequestBuilder.OnUpdate.Subscribe(1050f, ApplySettings);
         RCData.RuntimeLogicOverride.Subscribe(1050f, ModifyLogic);
         RCData.RuntimeLogicOverride.Subscribe(float.MaxValue, CheckForNoLogic);
