@@ -53,19 +53,19 @@ public static class RandoInterop
                 if (!string.IsNullOrEmpty(startItem))
                 {
                     builder.RemoveFromStart(startItem);
-                    string startDash = startItem == ItemNames.Mothwing_Cloak 
+                    string startDash = startItem == ItemNames.Mothwing_Cloak
                         ? builder.rng.Next(0, 2) == 0
-                            ? ItemManager.Left_Cloak 
+                            ? ItemManager.Left_Cloak
                             : ItemManager.Right_Cloak
-                        : startItem == ItemNames.Left_Mothwing_Cloak 
+                        : startItem == ItemNames.Left_Mothwing_Cloak
                             ? ItemManager.Left_Cloak
                             : ItemManager.Right_Cloak;
-                    string randomizableDash = startDash == ItemManager.Left_Cloak 
-                        ? ItemManager.Right_Cloak 
+                    string randomizableDash = startDash == ItemManager.Left_Cloak
+                        ? ItemManager.Right_Cloak
                         : ItemManager.Left_Cloak;
                     builder.AddToStart(startDash);
                     builder.AddItemByName(randomizableDash);
-                    if (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeBoth 
+                    if (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeBoth
                         || (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeRight && randomizableDash == ItemManager.Right_Cloak)
                         || (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeLeft && randomizableDash == ItemManager.Left_Cloak)
                         || (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeRight && builder.rng.Next(0, 2) == 0))
@@ -87,6 +87,27 @@ public static class RandoInterop
                     else if (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeRandom)
                         builder.AddItemByName($"{PlaceholderItem.Prefix}{(builder.rng.Next(0, 2) == 0 ? ItemManager.Left_Cloak : ItemManager.Right_Cloak)}");
                 }
+
+                builder.EditItemRequest(ItemManager.Left_Cloak, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Left_Cloak,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
+                builder.EditItemRequest(ItemManager.Right_Cloak, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Right_Cloak,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
             }
             else
             {
@@ -124,6 +145,27 @@ public static class RandoInterop
                     builder.AddItemByName($"{PlaceholderItem.Prefix}{ItemManager.Progressive_Left_Cloak}");
                 else if (builder.gs.DuplicateItemSettings.SplitCloakHandling == DuplicateItemSettings.SplitItemSetting.DupeRandom)
                     builder.AddItemByName($"{PlaceholderItem.Prefix}{(builder.rng.Next(0, 2) == 0 ? ItemManager.Progressive_Left_Cloak : ItemManager.Progressive_Right_Cloak)}");
+
+                builder.EditItemRequest(ItemManager.Progressive_Left_Cloak, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Progressive_Left_Cloak,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
+                builder.EditItemRequest(ItemManager.Progressive_Right_Cloak, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Progressive_Right_Cloak,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
             }
         }
         if (ExtraRando.Instance.Settings.RandomizeHotSprings)
@@ -263,18 +305,42 @@ public static class RandoInterop
             });
 
             builder.AddLocationByName(ItemManager.Bardoon_Butt);
+            builder.EditLocationRequest(ItemManager.Bardoon_Butt, info =>
+            {
+                info.getLocationDef = () => new()
+                {
+                    Name = ItemManager.Bardoon_Butt,
+                    SceneName = "Deepnest_East_04"
+                };
+            });
         }
         if (ExtraRando.Instance.Settings.SplitFireball && builder.gs.PoolSettings.Skills)
         {
             builder.AddLocationByName(ItemManager.Split_Vengeful_Spirit);
             builder.AddLocationByName(ItemManager.Split_Shade_Soul);
 
+            builder.EditLocationRequest(ItemManager.Split_Vengeful_Spirit, info =>
+            {
+                info.getLocationDef = () => new() 
+                { 
+                    Name = ItemManager.Split_Vengeful_Spirit,
+                    SceneName = "Crossroads_ShamanTemple"
+                };
+            });
+            builder.EditLocationRequest(ItemManager.Split_Shade_Soul, info =>
+            {
+                info.getLocationDef = () => new()
+                {
+                    Name = ItemManager.Split_Shade_Soul,
+                    SceneName = "Ruins1_31b"
+                };
+            });
+
             builder.RemoveItemByName(ItemNames.Vengeful_Spirit);
             builder.RemoveItemByName(ItemNames.Shade_Soul);
             builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Vengeful_Spirit}");
             builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Shade_Soul}");
 
-            // As skill is the default pool of items tmk, we don't need to edit the item defs.
             if (!ExtraRando.Instance.Settings.ScarceItemPool || builder.gs.CursedSettings.RemoveSpellUpgrades)
             {
                 // Level 1 spell handling
@@ -286,13 +352,33 @@ public static class RandoInterop
                     builder.AddItemByName(!addLeft ? ItemManager.Left_Vengeful_Spirit : ItemManager.Right_Vengeful_Spirit);
                 }
                 else
-                { 
+                {
                     builder.AddItemByName(ItemManager.Left_Vengeful_Spirit);
                     builder.AddItemByName(ItemManager.Right_Vengeful_Spirit);
                 }
+                builder.EditItemRequest(ItemManager.Left_Vengeful_Spirit, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Left_Vengeful_Spirit,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
+                builder.EditItemRequest(ItemManager.Right_Vengeful_Spirit, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Right_Vengeful_Spirit,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
 
-                if (builder.gs.DuplicateItemSettings.LevelOneSpells) 
-                { 
+                if (builder.gs.DuplicateItemSettings.LevelOneSpells)
+                {
                     if (!builder.IsAtStart(ItemManager.Left_Vengeful_Spirit))
                         builder.AddItemByName($"{PlaceholderItem.Prefix}{ItemManager.Left_Vengeful_Spirit}");
                     if (!builder.IsAtStart(ItemManager.Right_Vengeful_Spirit))
@@ -310,6 +396,26 @@ public static class RandoInterop
                         builder.AddItemByName($"{PlaceholderItem.Prefix}{ItemManager.Left_Shade_Soul}");
                         builder.AddItemByName($"{PlaceholderItem.Prefix}{ItemManager.Right_Shade_Soul}");
                     }
+                    builder.EditItemRequest(ItemManager.Left_Shade_Soul, info =>
+                    {
+                        info.getItemDef = () => new()
+                        {
+                            MajorItem = true,
+                            Name = ItemManager.Left_Shade_Soul,
+                            Pool = "Skill",
+                            PriceCap = 500
+                        };
+                    });
+                    builder.EditItemRequest(ItemManager.Right_Shade_Soul, info =>
+                    {
+                        info.getItemDef = () => new()
+                        {
+                            MajorItem = true,
+                            Name = ItemManager.Right_Shade_Soul,
+                            Pool = "Skill",
+                            PriceCap = 500
+                        };
+                    });
                 }
             }
             else
@@ -327,6 +433,27 @@ public static class RandoInterop
                     builder.AddItemByName(ItemManager.Right_Fireball);
                 }
 
+                builder.EditItemRequest(ItemManager.Left_Fireball, info => 
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Left_Fireball,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
+                builder.EditItemRequest(ItemManager.Right_Fireball, info =>
+                {
+                    info.getItemDef = () => new()
+                    {
+                        MajorItem = true,
+                        Name = ItemManager.Right_Fireball,
+                        Pool = "Skill",
+                        PriceCap = 500
+                    };
+                });
+
                 if (builder.gs.DuplicateItemSettings.LevelOneSpells || builder.gs.DuplicateItemSettings.LevelTwoSpells)
                 {
                     if (!builder.IsAtStart(ItemManager.Left_Fireball))
@@ -340,6 +467,22 @@ public static class RandoInterop
         {
             builder.AddLocationByName(ItemManager.GPZ_10);
             builder.AddLocationByName(ItemManager.White_Defender_5);
+            builder.EditLocationRequest(ItemManager.GPZ_10, info =>
+            {
+                info.getLocationDef = () => new()
+                {
+                    Name = ItemManager.GPZ_10,
+                    SceneName = "Room_Bretta_Basement"
+                };
+            });
+            builder.EditLocationRequest(ItemManager.White_Defender_5, info =>
+            {
+                info.getLocationDef = () => new()
+                {
+                    Name = ItemManager.White_Defender_5,
+                    SceneName = "Waterways_15"
+                };
+            });
         }
         if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
             builder.AddToVanilla(ItemManager.Dirtmouth_Stag_Key, ItemManager.Dirtmouth_Stag_Door);

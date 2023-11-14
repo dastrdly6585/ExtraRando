@@ -46,7 +46,18 @@
         "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Scream"
       }
-    }
+    },
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName" : "Scream_Spell"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ]
   },
   {
     "$type": "ItemChanger.Items.SpellItem, ItemChanger",
@@ -85,7 +96,18 @@
         "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Dive"
       }
-    }
+    },
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Dive_Spell"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ]
   },
   {
     "$type": "ItemChanger.Items.SpellItem, ItemChanger",
@@ -134,7 +156,18 @@
         "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Fireball"
       }
-    }
+    },
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Fireball_Spell"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ]
   },
   {
     "$type": "ItemChanger.Items.IntItem, ItemChanger",
@@ -207,7 +240,17 @@
         "key": "ShopIcons.Shadowdash"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Progressive_Left_Cloak"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -258,7 +301,17 @@
         "key": "ShopIcons.Shadowdash"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Progressive_Right_Cloak"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -309,7 +362,17 @@
         "key": "ShopIcons.Shadowdash"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Left_Cloak"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -360,7 +423,17 @@
         "key": "ShopIcons.Shadowdash"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Right_Cloak"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -414,7 +487,18 @@
         "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",
         "Key": "Dash"
       }
-    }
+    },
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Cloak"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ]
   },
   {
     "$type": "ExtraRando.ModInterop.ItemChangerInterop.HotspringItem, ExtraRando",
@@ -794,7 +878,17 @@
         "key": "ShopIcons.Fireball"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Left_Vengeful_Spirit"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -844,7 +938,17 @@
         "key": "ShopIcons.Fireball"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Right_Vengeful_Spirit"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -894,7 +998,17 @@
         "key": "ShopIcons.Fireball2"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Left_Shade_Soul"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -944,7 +1058,17 @@
         "key": "ShopIcons.Fireball2"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Right_Shade_Soul"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -995,7 +1119,17 @@
         "Key": "Fireball"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Left_Fireball"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -1046,7 +1180,17 @@
         "Key": "Fireball"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Right_Fireball"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   },
   {
@@ -1069,7 +1213,17 @@
         "Key": "Dirtmouth_Stag_Key"
       }
     },
-    "tags": null,
+    "tags": [
+      {
+        "$type": "ItemChanger.Tags.InteropTag, ItemChanger",
+        "Properties": {
+          "ModSource": "ExtraRando",
+          "IsMajorItem": true,
+          "MajorItemName": "Dirtmouth_Stag_Key"
+        },
+        "Message": "RandoSupplementalMetadata"
+      }
+    ],
     "obtainState": "Unobtained"
   }
 ]
