@@ -50,7 +50,7 @@ public static class ItemManager
     public const string Crossroads_Hot_Spring = "Crossroads-Hot_Spring";
     public const string Colosseum_Hot_Spring = "Colosseum-Hot_Spring";
     public const string Deepnest_Hot_Spring = "Deepnest-Hot_Spring";
-    public const string Bathhouse_Hot_Spring = "Crossroads-Hot_Spring";
+    public const string Bathhouse_Hot_Spring = "Bathhouse-Hot_Spring";
     public const string Lower_Godhome_Hot_Spring = "Lower_Godhome-Hot_Spring";
     public const string Upper_Godhome_Hot_Spring = "Upper_Godhome-Hot_Spring";
     public const string Pantheon_Master = "Pantheon-Master";
