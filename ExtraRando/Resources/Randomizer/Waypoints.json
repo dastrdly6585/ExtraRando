@@ -31,7 +31,7 @@
   },
   {
     "name": "Pantheon_5_Unlocked",
-    "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + Pantheon_4_Beatable | (PANTHEON_KEY_5 ? FALSE))",
+    "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + (Pantheon_4_Beatable | (PANTHEON_KEY_5 ? FALSE)))",
     "Stateless": true
   },
   {

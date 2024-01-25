@@ -946,6 +946,31 @@ public static class RandoInterop
 
         if (ModHooks.GetMod("RandoSettingsManager") is Mod)
             HookRandoSettingsManager();
+        CSL.CondensedSpoilerLogger.AddCategory("Other major items", () => ExtraRando.Instance.Settings.Enabled, new()
+        {
+            ItemManager.Cloak,
+            ItemManager.Left_Cloak, 
+            ItemManager.Right_Cloak,
+            ItemManager.Progressive_Left_Cloak,
+            ItemManager.Progressive_Right_Cloak,
+            ItemManager.Left_Fireball,
+            ItemManager.Left_Vengeful_Spirit,
+            ItemManager.Left_Shade_Soul,
+            ItemManager.Right_Fireball,
+            ItemManager.Right_Vengeful_Spirit,
+            ItemManager.Right_Shade_Soul,
+            ItemManager.Dive_Spell,
+            ItemManager.Scream_Spell,
+            ItemManager.Key_Ring
+        });
+        CSL.CondensedSpoilerLogger.AddCategory("Pantheon keys", () => ExtraRando.Instance.Settings.Enabled, new()
+        {
+            ItemManager.Pantheon_Access_Master,
+            ItemManager.Pantheon_Access_Artist,
+            ItemManager.Pantheon_Access_Sage,
+            ItemManager.Pantheon_Access_Knight,
+            ItemManager.Pantheon_Access_Hallownest
+        });
         On.UIManager.StartNewGame += UIManager_StartNewGame;
     }
 

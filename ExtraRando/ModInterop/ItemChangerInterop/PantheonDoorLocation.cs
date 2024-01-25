@@ -45,12 +45,12 @@ public class PantheonDoorLocation : AutoLocation
         {
             if (!Placement.AllObtained())
             {
-                if (CheckIfDoorUnlocked(self.playerDataString) && (PlayerData.instance.GetVariable<BossSequenceDoor.Completion>(self.playerDataString).canUnlock
-                || Placement.Items.All(x => x.WasEverObtained())))
+                if (CheckIfDoorUnlocked(self.playerDataString) && (Placement.Items.All(x => x.WasEverObtained())
+                    || CheckIfPantheonAccessible(self)))
                     ItemHelper.SpawnShiny(self.transform.position - new UnityEngine.Vector3(5f, 0f, 3f), Placement);
             }
             else
-            { 
+            {
                 self.doLockBreakSequence = false;
                 ReflectionHelper.SetField(self, "doUnlockSequence", false);
             }
@@ -66,7 +66,7 @@ public class PantheonDoorLocation : AutoLocation
         IL.BossSequenceDoor.OnTriggerEnter2D += BossSequenceDoor_OnTriggerEnter2D;
     }
 
-    private void BossSequenceDoor_OnTriggerEnter2D(MonoMod.Cil.ILContext il)
+    private void BossSequenceDoor_OnTriggerEnter2D(ILContext il)
     {
         ILCursor cursor = new(il);
         cursor.Goto(0);
@@ -97,4 +97,13 @@ public class PantheonDoorLocation : AutoLocation
             return false;
         return PlayerData.instance.GetVariable<BossSequenceDoor.Completion>(playerDataName).unlocked;
     }
+
+    private bool CheckIfPantheonAccessible(BossSequenceDoor bossSequenceDoor)
+     => bossSequenceDoor.bossSequence?.IsUnlocked() ?? false && (PantheonNumber < 4
+            // Panth 4
+            || (PantheonNumber == 4 && PlayerData.instance.GetVariable<BossSequenceDoor.Completion>("bossDoorStateTier1").completed
+                && PlayerData.instance.GetVariable<BossSequenceDoor.Completion>("bossDoorStateTier2").completed && PlayerData.instance.GetVariable<BossSequenceDoor.Completion>("bossDoorStateTier3").completed)
+            // Panth 5
+            || (PantheonNumber == 5 && PDHelper.RoyalCharmState == 4));
+
 }

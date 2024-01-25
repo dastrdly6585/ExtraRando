@@ -7,14 +7,14 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>ExtraRando</AssemblyTitle>
-        <AssemblyVersion>0.1.1.0</AssemblyVersion>
+        <AssemblyVersion>0.3.0.0</AssemblyVersion>
     </PropertyGroup>
 
     <PropertyGroup>
         <HollowKnightRefs>E:/Program Files/Steam/steamapps/common/Hollow Knight/hollow_knight_Data/Managed/</HollowKnightRefs>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <DocumentationFile></DocumentationFile>
-        <FileVersion>0.1.1.0</FileVersion>
+        <FileVersion>0.3.0.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,6 +31,9 @@
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
             <HintPath>..\..\..\Program Files\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="CondensedSpoilerLogger">
+          <HintPath>..\..\..\Program Files\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\CondensedSpoilerLogger\CondensedSpoilerLogger.dll</HintPath>
         </Reference>
         <Reference Include="ItemChanger">
           <HintPath>..\..\..\Program Files\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
