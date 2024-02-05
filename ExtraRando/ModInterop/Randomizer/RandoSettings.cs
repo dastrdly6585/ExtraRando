@@ -8,6 +8,8 @@ public class RandoSettings
 
     public bool SplitFireball { get; set; }
 
+    public bool UseKeyring { get; set; }
+
     public bool ScarceItemPool { get; set; }
 
     public bool RandomizeHotSprings { get; set; }

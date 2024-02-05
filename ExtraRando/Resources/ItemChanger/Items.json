@@ -178,11 +178,11 @@
       "$type": "ItemChanger.UIDefs.MsgUIDef, ItemChanger",
       "name": {
         "$type": "ItemChanger.BoxedString, ItemChanger",
-        "Value": "Key Ring"
+        "Value": "Keyring"
       },
       "shopDesc": {
         "$type": "ItemChanger.BoxedString, ItemChanger",
-        "Value": "What kind of donkey would leave this on the ground? Hehe..."
+        "Value": "What kind of donKey would leave this on the ground? Hehe..."
       },
       "sprite": {
         "$type": "ExtraRando.ModInterop.ItemChangerInterop.WrappedSprite, ExtraRando",

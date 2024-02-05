@@ -1,7 +1,7 @@
 [
   {
     "name": "Defeated_Vengefly_King",
-    "logic": "(LEFTSLASH | RIGHTSLASH | (SCREAM + $CASTSPELL)) + (Fungus1_20_v02[bot1] | Fungus1_20_v02[bot2] | Fungus1_20_v02[right1])",
+    "logic": "(Fungus1_20_v02[bot1] | Fungus1_20_v02[bot2] | Fungus1_20_v02[right1]) + (LEFTSLASH | RIGHTSLASH | (SCREAM + $CASTSPELL))",
     "Stateless": true
   },
   {
@@ -11,28 +11,23 @@
   },
   {
     "name": "Pantheon_1_Unlocked",
-    "logic": "GG_Atrium + Defeated_Gruz_Mother + Defeated_False_Knight + Defeated_Brooding_Mawlek + Defeated_Hornet_1 + Defeated_Massive_Moss_Charger + (Defeated_Sanctum_Warrior | Defeated_Elegant_Warrior) + Defeated_Gorb + Defeated_Dung_Defender + Defeated_Vengefly_King",
-    "Stateless": true
+    "logic": "GG_Atrium + Defeated_Gruz_Mother + Defeated_False_Knight + Defeated_Brooding_Mawlek + Defeated_Hornet_1 + Defeated_Massive_Moss_Charger + (Defeated_Sanctum_Warrior | Defeated_Elegant_Warrior) + Defeated_Gorb + Defeated_Dung_Defender + Defeated_Vengefly_King"
   },
   {
     "name": "Pantheon_2_Unlocked",
-    "logic": "GG_Atrium + Defeated_Xero + Defeated_Crystal_Guardian + Defeated_Mantis_Lords + Defeated_Soul_Master + Defeated_Flukemarm + Defeated_Broken_Vessel + Defeated_Nosk + Defeated_Marmu + Defeated_Colosseum_2",
-    "Stateless": true
+    "logic": "GG_Atrium + Defeated_Xero + Defeated_Crystal_Guardian + Defeated_Mantis_Lords + Defeated_Soul_Master + Defeated_Flukemarm + Defeated_Broken_Vessel + Defeated_Nosk + Defeated_Marmu + Defeated_Colosseum_2"
   },
   {
     "name": "Pantheon_3_Unlocked",
-    "logic": "GG_Atrium + Defeated_Hornet_2 + Defeated_Galien + Defeated_Uumuu + Defeated_Grimm + Defeated_Collector + Defeated_Hive_Knight + Defeated_Elder_Hu + Defeated_Grey_Prince_Zote",
-    "Stateless": true
+    "logic": "GG_Atrium + Defeated_Hornet_2 + Defeated_Galien + Defeated_Uumuu + Defeated_Grimm + Defeated_Collector + Defeated_Hive_Knight + Defeated_Elder_Hu + Defeated_Grey_Prince_Zote"
   },
   {
     "name": "Pantheon_4_Unlocked",
-    "logic": "GG_Atrium + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Beatable + Pantheon_2_Beatable + Pantheon_3_Beatable",
-    "Stateless": true
+    "logic": "GG_Atrium + Defeated_Enraged_Guardian + Defeated_No_Eyes + Defeated_Watcher_Knights + Defeated_Traitor_Lord + Defeated_Markoth + Pantheon_1_Beatable + Pantheon_2_Beatable + Pantheon_3_Beatable"
   },
   {
     "name": "Pantheon_5_Unlocked",
     "logic": "GG_Atrium + WINGS + LEFTCLAW + (WHITEFRAGMENT>2 + (Pantheon_4_Beatable | (PANTHEON_KEY_5 ? FALSE)))",
-    "Stateless": true
   },
   {
     "name": "Pantheon_1_Beatable",
@@ -51,12 +46,12 @@
   },
   {
     "name": "Pantheon_4_Beatable",
-    "logic": "GG_Atrium + ((PANTHEON_KEY_4 ? FALSE) | Pantheon_4_Unlocked) + COMBAT[Pantheon_4]",
+    "logic": "GG_Atrium + (PANTHEON_KEY_4 ? FALSE) + COMBAT[Pantheon_4] | Pantheon_4_Unlocked",
     "Stateless": true
   },
   {
     "name": "Can_Damage_Crystal_Guardian",
-    "logic": "UPSLASH | LEFTSLASH | RIGHTSLASH | MILDCOMBATSKIPS + (CYCLONE | GREATSLASH) | SPICYCOMBATSKIPS + (CYCLONE | GREATSLASH) + (DREAMNAIL + (SPELLS | FOCUS + SPORESHROOM | GLOWINGWOMB) | WEAVERSONG)",
+    "logic": "$ANY + (UPSLASH | LEFTSLASH | RIGHTSLASH | MILDCOMBATSKIPS + (CYCLONE | GREATSLASH) | SPICYCOMBATSKIPS + (CYCLONE | GREATSLASH) + (DREAMNAIL + (SPELLS | FOCUS + SPORESHROOM | GLOWINGWOMB) | WEAVERSONG))",
     "Stateless": true
   }
 ]

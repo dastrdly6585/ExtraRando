@@ -2,6 +2,7 @@ using ExtraRando.ModInterop.ItemChangerInterop;
 using ItemChanger;
 using KorzUtils.Helper;
 using Modding;
+using RandomizerCore.Json;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerMod;
@@ -321,8 +322,8 @@ public static class RandoInterop
 
             builder.EditLocationRequest(ItemManager.Split_Vengeful_Spirit, info =>
             {
-                info.getLocationDef = () => new() 
-                { 
+                info.getLocationDef = () => new()
+                {
                     Name = ItemManager.Split_Vengeful_Spirit,
                     SceneName = "Crossroads_ShamanTemple"
                 };
@@ -433,7 +434,7 @@ public static class RandoInterop
                     builder.AddItemByName(ItemManager.Right_Fireball);
                 }
 
-                builder.EditItemRequest(ItemManager.Left_Fireball, info => 
+                builder.EditItemRequest(ItemManager.Left_Fireball, info =>
                 {
                     info.getItemDef = () => new()
                     {
@@ -486,6 +487,36 @@ public static class RandoInterop
         }
         if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
             builder.AddToVanilla(ItemManager.Dirtmouth_Stag_Key, ItemManager.Dirtmouth_Stag_Door);
+
+        if (ExtraRando.Instance.Settings.UseKeyring && builder.gs.PoolSettings.Keys)
+        {
+            builder.RemoveItemByName(ItemNames.Simple_Key);
+            builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Simple_Key}");
+
+            if (builder.IsAtStart(ItemNames.Simple_Key))
+            {
+                builder.RemoveFromStart(ItemNames.Simple_Key);
+                builder.AddToStart(ItemManager.Key_Ring);
+            }
+            else
+            {
+                builder.AddItemByName(ItemManager.Key_Ring);
+                if (builder.gs.DuplicateItemSettings.SimpleKeyHandling != DuplicateItemSettings.SimpleKeySetting.NoDupe)
+                    builder.AddItemByName(ItemManager.Key_Ring);
+                builder.EditItemRequest(ItemManager.Key_Ring, info =>
+                    {
+                        info.getItemDef = () => new()
+                        {
+                            MajorItem = true,
+                            PriceCap = 500,
+                            Name = ItemManager.Key_Ring,
+                            Pool = "Key"
+                        };
+                    });
+
+
+            }
+        }
     }
 
     private static void ApplySpecialSettings(RequestBuilder builder)
@@ -624,31 +655,6 @@ public static class RandoInterop
                 if (builder.gs.PoolSettings.CharmNotches || builder.gs.MiscSettings.SalubraNotches == MiscSettings.SalubraNotchesSetting.Randomized)
                     itemsToRemove.Add(ItemNames.Charm_Notch);
             }
-            if (builder.gs.PoolSettings.Keys)
-            {
-                builder.RemoveItemByName(ItemNames.Simple_Key);
-                builder.RemoveItemByName($"{PlaceholderItem.Prefix}{ItemNames.Simple_Key}");
-
-                if (builder.IsAtStart(ItemNames.Simple_Key))
-                {
-                    builder.RemoveFromStart(ItemNames.Simple_Key);
-                    builder.AddToStart(ItemManager.Key_Ring);
-                }
-                else
-                {
-                    builder.AddItemByName(ItemManager.Key_Ring);
-                    builder.EditItemRequest(ItemManager.Key_Ring, info =>
-                    {
-                        info.getItemDef = () => new()
-                        {
-                            MajorItem = true,
-                            PriceCap = 500,
-                            Name = ItemManager.Key_Ring,
-                            Pool = "Key"
-                        };
-                    });
-                }
-            }
 
             while (itemsToRemove.Any())
             {
@@ -723,19 +729,20 @@ public static class RandoInterop
         if (!ExtraRando.Instance.Settings.Enabled)
             return;
 
+        JsonLogicFormat jsonLogicFormat = new();
         using Stream macroFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Macros.json");
-        builder.DeserializeJson(LogicManagerBuilder.JsonType.Macros, macroFile);
+        builder.DeserializeFile(LogicFileType.Macros, jsonLogicFormat, macroFile);
 
         using Stream waypointStream = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Waypoints.json");
-        builder.DeserializeJson(LogicManagerBuilder.JsonType.Waypoints, waypointStream);
+        builder.DeserializeFile(LogicFileType.Waypoints, jsonLogicFormat, waypointStream);
 
         using Stream logicFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Logic.json");
-        builder.DeserializeJson(LogicManagerBuilder.JsonType.Locations, logicFile);
+        builder.DeserializeFile(LogicFileType.Locations, jsonLogicFormat, logicFile);
 
         if (ExtraRando.Instance.Settings.SplitFireball)
         {
             using Stream substituteFile = ResourceHelper.LoadResource<ExtraRando>("Randomizer.Substitutions.json");
-            builder.DeserializeJson(LogicManagerBuilder.JsonType.LogicSubst, substituteFile);
+            builder.DeserializeFile(LogicFileType.LogicSubst, jsonLogicFormat, substituteFile);
 
             builder.LogicLookup.Add(ItemManager.Split_Vengeful_Spirit, builder.LogicLookup["Vengeful_Spirit"]);
             builder.LogicLookup.Add(ItemManager.Split_Shade_Soul, builder.LogicLookup["Shade_Soul"]);
@@ -743,72 +750,70 @@ public static class RandoInterop
             builder.GetOrAddTerm("FIREBALLLEFT");
             builder.GetOrAddTerm("FIREBALLRIGHT");
 
-            builder.AddItem(new MultiItem(ItemManager.Left_Vengeful_Spirit, new RandomizerCore.TermValue[]
-            {
+            builder.AddItem(new MultiItem(ItemManager.Left_Vengeful_Spirit,
+            [
                 new(builder.GetTerm("FIREBALL"), 1),
                 new(builder.GetTerm("FIREBALLLEFT"), 1),
                 new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Left_Shade_Soul, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Left_Shade_Soul,
+            [
                 new(builder.GetTerm("FIREBALL"), 1),
                 new(builder.GetTerm("FIREBALLLEFT"), 1),
                 new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Vengeful_Spirit, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Right_Vengeful_Spirit,
+            [
                 new(builder.GetTerm("FIREBALL"), 1),
                 new(builder.GetTerm("FIREBALLRIGHT"), 1),
                 new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Shade_Soul, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Right_Shade_Soul,
+            [
                 new(builder.GetTerm("FIREBALL"), 1),
                 new(builder.GetTerm("FIREBALLRIGHT"), 1),
                 new(builder.GetTerm("SPELLS"), 1)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Left_Fireball, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Left_Fireball,
+            [
                 new(builder.GetTerm("FIREBALL"), 2),
                 new(builder.GetTerm("FIREBALLLEFT"), 2),
                 new(builder.GetTerm("SPELLS"), 2)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Right_Fireball, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Right_Fireball,
+            [
                 new(builder.GetTerm("FIREBALL"), 2),
                 new(builder.GetTerm("FIREBALLRIGHT"), 2),
                 new(builder.GetTerm("SPELLS"), 2)
-            }));
+            ]));
         }
-
         if (ExtraRando.Instance.Settings.ScarceItemPool)
         {
-            builder.AddItem(new MultiItem(ItemManager.Cloak, new RandomizerCore.TermValue[]
-            {
+            builder.AddItem(new MultiItem(ItemManager.Cloak,
+            [
                 new(builder.GetTerm("LEFTDASH"), 2),
                 new(builder.GetTerm("RIGHTDASH"), 2)
-            }));
+            ]));
             builder.AddItem(new SingleItem(ItemManager.Left_Cloak, new(builder.GetTerm("LEFTDASH"), 2)));
             builder.AddItem(new SingleItem(ItemManager.Right_Cloak, new(builder.GetTerm("RIGHTDASH"), 2)));
 
-            builder.AddItem(new MultiItem(ItemManager.Fireball_Spell, new RandomizerCore.TermValue[]
-            {
+            builder.AddItem(new MultiItem(ItemManager.Fireball_Spell,
+            [
                 new(builder.GetTerm("FIREBALL"), 2),
                 new(builder.GetTerm("SPELLS"), 2)
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Dive_Spell, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Dive_Spell,
+            [
                 new(builder.GetTerm("QUAKE"), 2),
                 new(builder.GetTerm("SPELLS"), 2)
 
-            }));
-            builder.AddItem(new MultiItem(ItemManager.Scream_Spell, new RandomizerCore.TermValue[]
-            {
+            ]));
+            builder.AddItem(new MultiItem(ItemManager.Scream_Spell,
+            [
                 new(builder.GetTerm("SCREAM"), 2),
                 new(builder.GetTerm("SPELLS"), 2)
 
-            }));
-            builder.AddItem(new SingleItem(ItemManager.Key_Ring, new(builder.GetTerm("SIMPLE"), 4)));
+            ]));
         }
         if (ExtraRando.Instance.Settings.SplitShadeCloak && settings.PoolSettings.Skills)
         {
@@ -885,6 +890,8 @@ public static class RandoInterop
             Term stagTerm = builder.GetOrAddTerm("Dirtmouth_Stag_Key");
             builder.AddItem(new BoolItem(ItemManager.Dirtmouth_Stag_Key, stagTerm));
         }
+        if (ExtraRando.Instance.Settings.UseKeyring)
+            builder.AddItem(new SingleItem(ItemManager.Key_Ring, new(builder.GetTerm("SIMPLE"), 4)));
     }
 
     private static void CheckForNoLogic(GenerationSettings settings, LogicManagerBuilder builder)
@@ -899,7 +906,7 @@ public static class RandoInterop
     {
         textWriter.WriteLine("ExtraRando settings");
         using Newtonsoft.Json.JsonTextWriter jsonTextWriter = new(textWriter) { CloseOutput = false, };
-        JsonUtil._js.Serialize(jsonTextWriter, ExtraRando.Instance.Settings);
+        RandomizerMod.RandomizerData.JsonUtil._js.Serialize(jsonTextWriter, ExtraRando.Instance.Settings);
         textWriter.WriteLine();
     }
 
@@ -949,7 +956,7 @@ public static class RandoInterop
         CSL.CondensedSpoilerLogger.AddCategory("Other major items", () => ExtraRando.Instance.Settings.Enabled, new()
         {
             ItemManager.Cloak,
-            ItemManager.Left_Cloak, 
+            ItemManager.Left_Cloak,
             ItemManager.Right_Cloak,
             ItemManager.Progressive_Left_Cloak,
             ItemManager.Progressive_Right_Cloak,

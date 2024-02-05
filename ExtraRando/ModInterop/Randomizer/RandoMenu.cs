@@ -47,6 +47,7 @@ internal class RandoMenu
         VerticalItemPanel rightPanel = new(_connectionPage, new(0, 0), 80f, false, new IMenuElement[] {
             _elementFactory.ElementLookup["SplitFireball"],
             _elementFactory.ElementLookup["SplitShadeCloak"],
+            _elementFactory.ElementLookup["UseKeyring"],
             _elementFactory.ElementLookup["ScarceItemPool"],
             _elementFactory.ElementLookup["BlockEarlyGameStags"],
             _elementFactory.ElementLookup["AddHintMarkers"]
