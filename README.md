@@ -43,11 +43,13 @@ Splits the shade cloak ability into two direction items (like "Split Mothwing Cl
 ## Scarce Item Pool
 Remove or packs certain items from the pool to lower the overall item amount.
 - Merges spells with the respective upgrade. (If "Split Fireball" is used, it will create a left and right shade soul)
-- Merges all small keys into one "Key ring" which grants you 4 keys on pickup.
 - Merges mothwing and shade cloak into one item (If "Split Mothwing Cloak" or "Split Shade Cloak" is used, one item for the left and one the right side will be created instead).
 - Removes 2 full masks, 1 vessel and 1 charm notch.
 - If Rando Plus with the randomize nail upgrade is used, one upgrade will be removed as well.
 - If Curse Randomizer with Cursed Wallet is used, one wallet will be removed as well.
+
+## Keyring
+Merges all 4 simple keys into one item. Does nothing if keys are not randomized. If simple key duplicates are enabled, an extra keyring is added as well (Note that currently the duplicate will still grant the keys instead of geo)
 
 ## Block Early Game Stags
 This setting will create an item at the stag station door in Dirtmouth near the bench with is required (in addition to the normal stag item) to open the Stag station door.
