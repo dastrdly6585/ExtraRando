@@ -48,10 +48,5 @@
     "name": "Pantheon_4_Beatable",
     "logic": "GG_Atrium + (PANTHEON_KEY_4 ? FALSE) + COMBAT[Pantheon_4] | Pantheon_4_Unlocked",
     "Stateless": true
-  },
-  {
-    "name": "Can_Damage_Crystal_Guardian",
-    "logic": "$ANY + (UPSLASH | LEFTSLASH | RIGHTSLASH | MILDCOMBATSKIPS + (CYCLONE | GREATSLASH) | SPICYCOMBATSKIPS + (CYCLONE | GREATSLASH) + (DREAMNAIL + (SPELLS | FOCUS + SPORESHROOM | GLOWINGWOMB) | WEAVERSONG))",
-    "Stateless": true
   }
 ]
