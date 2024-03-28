@@ -42,7 +42,8 @@ internal class RandoMenu
             _elementFactory.ElementLookup["RandomizeColoAccess"],
             _elementFactory.ElementLookup["RandomizePantheonAccess"],
             _elementFactory.ElementLookup["RandomizeButt"],
-            _elementFactory.ElementLookup["RandomizeAwfulLocations"]
+            _elementFactory.ElementLookup["RandomizeAwfulLocations"],
+            _elementFactory.ElementLookup["EnforceJunkLocations"]
         });
         VerticalItemPanel rightPanel = new(_connectionPage, new(0, 0), 80f, false, new IMenuElement[] {
             _elementFactory.ElementLookup["SplitFireball"],

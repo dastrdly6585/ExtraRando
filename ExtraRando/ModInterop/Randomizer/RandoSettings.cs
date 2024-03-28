@@ -37,4 +37,6 @@ public class RandoSettings
     public int RandomLocationHints { get; set; }
 
     public bool AddFixedHints { get; set; }
+
+    public bool EnforceJunkLocations { get; set; }
 }

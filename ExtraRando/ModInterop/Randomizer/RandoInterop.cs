@@ -6,9 +6,7 @@ using Modding;
 using RandomizerCore.Json;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
-using RandomizerMod;
 using RandomizerMod.Logging;
-using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using RandoSettingsManager;
@@ -21,6 +19,12 @@ namespace ExtraRando.ModInterop.Randomizer;
 
 public static class RandoInterop
 {
+    #region Properties
+
+    public static List<(string, string)> JunkPlacements { get; set; } = new();
+
+    #endregion
+
     #region Event handler
 
     private static void ApplySettings(RequestBuilder builder)
@@ -522,6 +526,7 @@ public static class RandoInterop
 
     private static void ApplySpecialSettings(RequestBuilder builder)
     {
+        JunkPlacements.Clear();
         if (!ExtraRando.Instance.Settings.Enabled)
             return;
 
@@ -722,6 +727,60 @@ public static class RandoInterop
                     };
                 });
             }
+        }
+        if (ExtraRando.Instance.Settings.EnforceJunkLocations)
+        {
+            string junkFile = Path.Combine(Path.GetDirectoryName(typeof(ExtraRando).Assembly.Location), "JunkLocations.txt");
+            if (!File.Exists(junkFile))
+            {
+                LogHelper.Write<ExtraRando>("Couldn't find \"JunkLocations.txt\" file in ExtraRando directory. To junk locations, provide the file.", KorzUtils.Enums.LogType.Warning, false);
+                return;
+            }
+
+            List<string> locations = new();
+            List<string> availableJunkItems = new();
+            foreach (var item in builder.EnumerateItemGroups())
+            {
+                locations.AddRange(item.Locations.EnumerateDistinct());
+                availableJunkItems.AddRange(item.Items.EnumerateWithMultiplicity().Where(x => x.StartsWith("Geo_Rock") || x == ItemNames.One_Geo
+                    || x.StartsWith("Soul_Totem") || x == ItemNames.Soul_Refill || x.StartsWith("Geo_Chest")));
+            }
+            locations = locations.Distinct().ToList();
+
+            string[] locationsToJunk = File.ReadAllLines(junkFile);
+            if (locationsToJunk != null)
+                foreach (string locationName in locationsToJunk)
+                {
+                    if (locationName.StartsWith("//"))
+                        continue;
+                    if (!locations.Contains(locationName) || Finder.GetLocation(locationName) == null)
+                    {
+                        LogHelper.Write<ExtraRando>($"Couldn't find location with name \"{locationName}\" to junk.", KorzUtils.Enums.LogType.Warning, false);
+                        continue;
+                    }
+                    builder.RemoveLocationByName(locationName);
+                    if (availableJunkItems.Any())
+                    {
+                        int chosenIndex = builder.rng.Next(0, availableJunkItems.Count);
+                        builder.AddToVanilla(availableJunkItems[chosenIndex], locationName);
+                        JunkPlacements.Add(new(availableJunkItems[chosenIndex], locationName));
+                        availableJunkItems.RemoveAt(chosenIndex);
+                    }
+                    else
+                    {
+                        int rolledNumber = builder.rng.Next(0, 5);
+                        string chosenJunk = rolledNumber switch
+                        {
+                            1 => ItemNames.One_Geo,
+                            2 => ItemNames.Soul_Refill,
+                            3 => ItemNames.Geo_Rock_Hive,
+                            4 => ItemNames.Geo_Chest_False_Knight,
+                            _ => ItemNames.Soul_Totem_Path_of_Pain,
+                        };
+                        builder.AddToVanilla(chosenJunk, locationName);
+                        JunkPlacements.Add(new(chosenJunk, locationName));
+                    }
+                }
         }
     }
 
@@ -931,11 +990,26 @@ public static class RandoInterop
     private static void UIManager_StartNewGame(On.UIManager.orig_StartNewGame orig, UIManager self, bool permaDeath, bool bossRush)
     {
         orig(self, permaDeath, bossRush);
-        if (RandomizerMod.RandomizerMod.IsRandoSave && ExtraRando.Instance.Settings.Enabled && ExtraRando.Instance.Settings.BlockEarlyGameStags)
+        if (RandomizerMod.RandomizerMod.IsRandoSave && ExtraRando.Instance.Settings.Enabled)
         {
-            AbstractPlacement placement = Finder.GetLocation(ItemManager.Dirtmouth_Stag_Door).Wrap();
-            placement.Add(Finder.GetItem(ItemManager.Dirtmouth_Stag_Key));
-            ItemChangerMod.AddPlacements(new List<AbstractPlacement>() { placement });
+            List<AbstractPlacement> toAdd = new();
+            if (ExtraRando.Instance.Settings.BlockEarlyGameStags)
+            {
+                AbstractPlacement placement = Finder.GetLocation(ItemManager.Dirtmouth_Stag_Door).Wrap();
+                placement.Add(Finder.GetItem(ItemManager.Dirtmouth_Stag_Key));
+                toAdd.Add(placement);
+            }
+            if (ExtraRando.Instance.Settings.EnforceJunkLocations && JunkPlacements.Any())
+            {
+                foreach ((string, string) requestPlacement in JunkPlacements)
+                {
+                    AbstractPlacement placement = Finder.GetLocation(requestPlacement.Item2)?.Wrap();
+                    placement.Add(Finder.GetItem(requestPlacement.Item1));
+                    toAdd.Add(placement);
+                }
+            }
+            if (toAdd.Any())
+                ItemChangerMod.AddPlacements(toAdd);
         }
     }
 
