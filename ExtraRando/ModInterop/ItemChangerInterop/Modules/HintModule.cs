@@ -34,6 +34,7 @@ internal class HintModule : Module
         { ItemNames.Herrah, ("SPIDER_MEET", "I don't have the luxury like the beast sleeping in <color=#f9ff40>{0}</color>.") },
         { ItemNames.Shopkeepers_Key, ("SLY_GENERIC", "Maybe you can even look for my key? I think I left it somewhere in <color=#f9ff40>{0}</color>.") },
         { ItemNames.Desolate_Dive, ("MAGE_LORD", "After discovering the magic from <color=#f9ff40>{0}</color>, I thought I finally could convince the king. How foolish...") },
+        { "White_Fragments", ("QUEEN_MEET", "United from <color=#f9ff40>{0}</color> to <color=#f9ff40>{1}</color> no matter the way.") }
     };
     #endregion
 
@@ -142,6 +143,13 @@ internal class HintModule : Module
                     string rightCrystalHeart = Ref.Settings.GetItems().First(x => x.name == ItemNames.Right_Crystal_Heart).RandoLocation()?.LocationDef?.MapArea ?? "an unknown place";
                     string value = string.Format(_itemMapping["Split_Crystal_Heart"].Item2, leftCrystalHeart.ToUpper(), rightCrystalHeart.ToUpper());
                     HintList.Add(_itemMapping["Split_Crystal_Heart"].Item1, value);
+                }
+                else if (item.name == ItemNames.Queen_Fragment)
+                {
+                    string queenFragment = item.RandoLocation()?.LocationDef?.MapArea ?? "an unknown place.";
+                    string kingFragment = Ref.Settings.GetItems().First(x => x.name == ItemNames.King_Fragment).RandoLocation()?.LocationDef?.MapArea ?? "an unknown place";
+                    string value = string.Format(_itemMapping["White_Fragments"].Item2, queenFragment, kingFragment);
+                    HintList.Add(_itemMapping["White_Fragments"].Item1, value);
                 }
             }
             catch (Exception)

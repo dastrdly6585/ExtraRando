@@ -1015,7 +1015,7 @@ public static class RandoInterop
 
     private static void RandoController_OnExportCompleted(RandoController obj)
     {
-        if (ExtraRando.Instance.Settings.Enabled || !ExtraRando.Instance.Settings.AddFixedHints)
+        if (!ExtraRando.Instance.Settings.Enabled || !ExtraRando.Instance.Settings.AddFixedHints)
             return;
         if (ItemChangerMod.Modules.Get<HintModule>() == null)
         {
