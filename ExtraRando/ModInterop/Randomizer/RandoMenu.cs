@@ -50,11 +50,12 @@ internal class RandoMenu
             _elementFactory.ElementLookup["UseKeyring"],
             _elementFactory.ElementLookup["ScarceItemPool"],
             _elementFactory.ElementLookup["BlockEarlyGameStags"],
+            _elementFactory.ElementLookup["AddFixedHints"],
             _elementFactory.ElementLookup["AddHintMarkers"]
         });
         
-        GridItemPanel optionPanels = new(_connectionPage, new(0f, 0), 2, 100f, 600f, false, new IMenuElement[] { leftPanel, rightPanel });
-        new VerticalItemPanel(_connectionPage, new(0, 400f), 150f, true, new IMenuElement[] { _elementFactory.ElementLookup["Enabled"], optionPanels  });
+        GridItemPanel optionPanels = new(_connectionPage, new(0f, 150), 2, 100f, 600f, false, new IMenuElement[] { leftPanel, rightPanel });
+        new VerticalItemPanel(_connectionPage, new(0, 450f), 150f, true, new IMenuElement[] { _elementFactory.ElementLookup["Enabled"], optionPanels  });
         _elementFactory.ElementLookup["NoLogic"].MoveTo(new(0, -350f));
 
         _elementFactory.ElementLookup["AddHintMarkers"].SelfChanged += ToggleHintVisibility;

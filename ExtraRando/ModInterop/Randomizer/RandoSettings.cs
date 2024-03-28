@@ -35,4 +35,6 @@ public class RandoSettings
     public int UsefulItemHints { get; set; }
 
     public int RandomLocationHints { get; set; }
+
+    public bool AddFixedHints { get; set; }
 }

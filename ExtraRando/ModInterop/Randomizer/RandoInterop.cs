@@ -1,4 +1,5 @@
 using ExtraRando.ModInterop.ItemChangerInterop;
+using ExtraRando.ModInterop.ItemChangerInterop.Modules;
 using ItemChanger;
 using KorzUtils.Helper;
 using Modding;
@@ -922,6 +923,8 @@ public static class RandoInterop
         // In case no marker is placed but this setting is enabled.
         if (ExtraRando.Instance.Settings.AddHintMarkers)
             hashModifier += 5;
+        if (ExtraRando.Instance.Settings.AddFixedHints)
+            hashModifier += 51;
         return hashModifier;
     }
 
@@ -933,6 +936,17 @@ public static class RandoInterop
             AbstractPlacement placement = Finder.GetLocation(ItemManager.Dirtmouth_Stag_Door).Wrap();
             placement.Add(Finder.GetItem(ItemManager.Dirtmouth_Stag_Key));
             ItemChangerMod.AddPlacements(new List<AbstractPlacement>() { placement });
+        }
+    }
+
+    private static void RandoController_OnExportCompleted(RandoController obj)
+    {
+        if (ExtraRando.Instance.Settings.Enabled || !ExtraRando.Instance.Settings.AddFixedHints)
+            return;
+        if (ItemChangerMod.Modules.Get<HintModule>() == null)
+        {
+            HintModule hintModule = ItemChangerMod.Modules.GetOrAdd<HintModule>();
+            hintModule.AddHints();
         }
     }
 
@@ -950,6 +964,7 @@ public static class RandoInterop
 
         SettingsLog.AfterLogSettings += WriteSettings;
         RandoController.OnCalculateHash += RandoController_OnCalculateHash;
+        RandoController.OnExportCompleted += RandoController_OnExportCompleted;
 
         if (ModHooks.GetMod("RandoSettingsManager") is Mod)
             HookRandoSettingsManager();
