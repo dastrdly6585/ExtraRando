@@ -161,6 +161,7 @@ public class PinItem : AbstractItem
         "Read_Ability", // Lore Rando
         "Geo_Wallet", // Curse Rando
         "Dreamnail_Fragment", // Curse Rando
+        "Hollow_Knight_Chain", // Access Rando
         ItemManager.Key_Ring
     };
 
