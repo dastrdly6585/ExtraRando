@@ -1,12 +1,18 @@
 ﻿using ItemChanger;
 using ItemChanger.Internal;
 using ItemChanger.Modules;
+using ItemChanger.Tags;
 using KorzUtils.Helper;
 using Modding;
 using RandomizerMod.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static BossStatueCompletionStates;
+using System.Text;
+using UnityEngine.SceneManagement;
+using ItemChanger.Util;
+using UnityEngine;
 
 namespace ExtraRando.ModInterop.ItemChangerInterop.Modules;
 
@@ -44,6 +50,47 @@ internal class HintModule : Module
 
     #endregion
 
+    #region Methods
+
+    private string BuildGrubText()
+    {
+        StringBuilder stringBuilder = new("I think my children should be at:");
+        stringBuilder.Append("<br>");
+        StringBuilder itemPreviewBuilder = new();
+        Dictionary<string, int> grubLocations = [];
+        foreach (var item in Ref.Settings.GetItems())
+        {
+            if (item.name != ItemNames.Grub || item.IsObtained())
+                continue;
+            string area = item.RandoLocation()?.LocationDef?.MapArea;
+            if (string.IsNullOrEmpty(area))
+                area = "An unknown place.";
+            if (!grubLocations.ContainsKey(area))
+                grubLocations.Add(area, 0);
+            grubLocations[area]++;
+        }
+        foreach (string key in grubLocations.Keys)
+        {
+            itemPreviewBuilder.Append("<color=#f9ff40>");
+            itemPreviewBuilder.Append(key);
+            itemPreviewBuilder.Append(": ");
+            itemPreviewBuilder.Append(grubLocations[key]);
+            itemPreviewBuilder.Append("</color>");
+
+            string text = itemPreviewBuilder.ToString();
+            itemPreviewBuilder.Clear();
+
+            stringBuilder.Append("<br>");
+            stringBuilder.Append(text);
+        }
+        if (grubLocations.Count == 0)
+            return "You have found all of them. Thank you!";
+        
+        return stringBuilder.ToString();
+    }
+
+    #endregion
+
     #region Eventhandler
 
     private string ModHooks_LanguageGetHook(string key, string sheetTitle, string orig)
@@ -71,11 +118,18 @@ internal class HintModule : Module
         ModHooks.LanguageGetHook += ModHooks_LanguageGetHook;
         ModHooks.GetPlayerBoolHook += ModHooks_GetPlayerBoolHook;
         Events.AddFsmEdit(new("Dream Moth", "Conversation Control"), ForceSeerDialogue);
+        Events.AddSceneChangeEdit("Crossroads_38", SpawnHintTablet);
+    }
+
+    private void SpawnHintTablet(Scene scene)
+    {
+        GameObject tablet = TabletUtility.MakeNewTablet("Hint tablet", BuildGrubText);
+        tablet.transform.localPosition = new(25.85f, 3.6f, 2.5f);
+        tablet.SetActive(true);
     }
 
     private void ForceSeerDialogue(PlayMakerFSM self) => self.GetState("Greet Choice")?.AdjustTransition("FINISHED", "Greet");
     
-
     public override void Unload()
     {
         ModHooks.LanguageGetHook -= ModHooks_LanguageGetHook;
