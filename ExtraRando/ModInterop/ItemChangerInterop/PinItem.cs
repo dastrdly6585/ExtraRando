@@ -276,7 +276,6 @@ public class PinItem : AbstractItem
         else
         {
             viablePlacements = Ref.Settings.Placements.Where(x => x.Value.Items.All(x => !x.IsObtained()) 
-            && !x.Value.CheckVisitedAny(VisitState.Previewed)
             && !existLocations.Contains(x.Key.Replace("_", " ").Replace("-", " "))
             && x.Value.Items.Any(item => _viableUsefulItems.Contains(item.name))).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
               .ToList();
