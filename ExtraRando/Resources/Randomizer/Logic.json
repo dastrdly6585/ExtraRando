@@ -9,7 +9,7 @@
   },
   {
     "name": "Colosseum-Hot_Spring",
-    "logic": "(Room_Colosseum_02[top1] | Room_Colosseum_02[top2]) + (BREAKABLE_RoomColosseum02_BreakableWallSilhouette ? TRUE)"
+    "logic": "(Room_Colosseum_02[top1] | Room_Colosseum_02[top2]) + (Wall-Colosseum_Spring ? TRUE)"
   },
   {
     "name": "Bathhouse-Hot_Spring",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Bardoon_Butt",
-    "logic": "Deepnest_East_04 + (LEFTCLAW | RIGHTCLAW + (WINGS | ANYDASH + PRECISEMOVEMENT | DIFFICULTSKIPS) | ENEMYPOGOS + (WINGS | RIGHTCLAW)) + (BREAKABLE_Deepnest_East_04_Breakable_Wall_Waterways ? TRUE)"
+    "logic": "Deepnest_East_04 + (LEFTCLAW | RIGHTCLAW + (WINGS | ANYDASH + PRECISEMOVEMENT | DIFFICULTSKIPS) | ENEMYPOGOS + (WINGS | RIGHTCLAW)) + (Wall-Bardoon's_Butt ? TRUE)"
   },
   {
     "name": "Dirtmouth_Stag_Door",

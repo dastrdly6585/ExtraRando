@@ -7,14 +7,14 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <LangVersion>latest</LangVersion>
         <AssemblyTitle>ExtraRando</AssemblyTitle>
-        <AssemblyVersion>0.5.0.0</AssemblyVersion>
+        <AssemblyVersion>0.5.1.0</AssemblyVersion>
     </PropertyGroup>
 
     <PropertyGroup>
         <HollowKnightRefs>E:/Program Files/Steam/steamapps/common/Hollow Knight/hollow_knight_Data/Managed/</HollowKnightRefs>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <DocumentationFile></DocumentationFile>
-        <FileVersion>0.5.0.0</FileVersion>
+        <FileVersion>0.5.1.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
