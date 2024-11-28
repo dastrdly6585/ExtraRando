@@ -146,7 +146,9 @@ public class PinItem : AbstractItem
         // Charms
         ItemNames.Kingsoul,
         ItemNames.Void_Heart,
-        ItemNames.Wayward_Compass,
+        "King_Fragment",
+        "Queen_Fragment",
+        //ItemNames.Wayward_Compass,
         // Dreamer
         ItemNames.Monomon,
         ItemNames.Lurien,
@@ -180,6 +182,8 @@ public class PinItem : AbstractItem
 
     public string ItemName { get; set; }
 
+    public static List<string> existLocations { get; set; }
+
     #endregion
 
     #region Methods
@@ -205,6 +209,11 @@ public class PinItem : AbstractItem
             {
                 if (string.IsNullOrEmpty(LocationName))
                 {
+                    if (existLocations == null)
+                    {
+                        existLocations = new List<string>();
+                    }
+
                     if (Type == MarkerType.ShellMarker)
                     {
                         List<AbstractPlacement> viablePlacements = Ref.Settings.Placements.Where(x => !x.Value.AllObtained() && x.Value is not IMultiCostPlacement)
@@ -224,6 +233,7 @@ public class PinItem : AbstractItem
                             yield break;
                         LocationName = matchingLocations[UnityEngine.Random.Range(0, matchingLocations.Count)];
                     }
+                    existLocations.Add(LocationName);
                 }
                 GameHelper.DisplayMessage(Type switch
                 {
@@ -264,9 +274,13 @@ public class PinItem : AbstractItem
             && x.Value.Items.Any(item => _viablePotentialItems.Contains(item.name))).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
               .ToList();
         else
-            viablePlacements = Ref.Settings.Placements.Where(x => x.Value.Items.All(x => !x.IsObtained())
+        {
+            viablePlacements = Ref.Settings.Placements.Where(x => x.Value.Items.All(x => !x.IsObtained()) 
+            && !x.Value.CheckVisitedAny(VisitState.Previewed)
+            && !existLocations.Contains(x.Key.Replace("_", " ").Replace("-", " "))
             && x.Value.Items.Any(item => _viableUsefulItems.Contains(item.name))).Select(x => x.Key.Replace("_", " ").Replace("-", " "))
               .ToList();
+        }
         return viablePlacements;
     } 
 

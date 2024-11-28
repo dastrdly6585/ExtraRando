@@ -1,6 +1,8 @@
 using ExtraRando.ModInterop.ItemChangerInterop;
 using ExtraRando.ModInterop.ItemChangerInterop.Modules;
+using InControl;
 using ItemChanger;
+using ItemChanger.Internal;
 using KorzUtils.Helper;
 using Modding;
 using RandomizerCore.Json;
@@ -11,6 +13,7 @@ using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using RandoSettingsManager;
 using RandoSettingsManager.SettingsManagement;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -1008,8 +1011,35 @@ public static class RandoInterop
                     toAdd.Add(placement);
                 }
             }
+            if (ExtraRando.Instance.Settings.AddHintMarkers)
+            {
+                PinItem.existLocations = new List<string>();
+            }
             if (toAdd.Any())
                 ItemChangerMod.AddPlacements(toAdd);
+        }
+    }
+
+    private static void UIManager_ContinueGame(On.UIManager.orig_ContinueGame orig, UIManager self)
+    {
+        orig(self);
+        if (RandomizerMod.RandomizerMod.IsRandoSave && ExtraRando.Instance.Settings.Enabled 
+            && ExtraRando.Instance.Settings.AddHintMarkers)
+        {
+            PinItem.existLocations = new List<string>();
+            foreach (string loc in Ref.Settings.Placements.Keys)
+            {
+                foreach (AbstractItem item in Ref.Settings.Placements[loc].Items)
+                {
+                    if (item is PinItem)
+                    {
+                        if (!string.IsNullOrEmpty(((PinItem)item).LocationName))
+                        {
+                            PinItem.existLocations.Add(((PinItem)item).LocationName.Replace("_", " ").Replace("-", " "));
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -1068,6 +1098,7 @@ public static class RandoInterop
             ItemManager.Pantheon_Access_Hallownest
         });
         On.UIManager.StartNewGame += UIManager_StartNewGame;
+        On.UIManager.ContinueGame += UIManager_ContinueGame;
     }
 
     private static void HookRandoSettingsManager()
