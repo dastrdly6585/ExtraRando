@@ -1,12 +1,6 @@
-﻿using ExtraRando.ModInterop.ItemChangerInterop.Modules;
-using ItemChanger;
-using ItemChanger.Internal;
-using KorzUtils.Helper;
-using Modding;
+﻿using Modding;
 using RandomizerCore.Logic;
-using RandomizerMod.Extensions;
 using System;
-using System.Collections.Generic;
 
 namespace ExtraRando.Data.VictoryConditions;
 
@@ -36,29 +30,10 @@ internal class CharmVictoryCondition : IVictoryCondition
 
     public string GetHintText()
     {
-        if (RandomizerMod.RandomizerMod.RS.GenerationSettings.PoolSettings.Charms)
-        {
-            Dictionary<string, int> leftItems = [];
-            foreach (AbstractItem item in Ref.Settings.GetItems())
-            {
-                if (item.IsObtained())
-                    continue;
-                if (item is ItemChanger.Items.CharmItem)
-                {
-                    string area = item.RandoLocation()?.LocationDef?.MapArea ?? "an unknown place.";
-                    if (!leftItems.ContainsKey(area))
-                        leftItems.Add(area, 0);
-                    leftItems[area]++;
-                }
-            }
-            if (leftItems.Count == 0)
-                return null;
-            string text = "Ooooooooooooohhhhhhh, my lovely charms should be at:";
-            foreach (string item in leftItems.Keys)
-                text += $"<br>{leftItems[item]} in {item}";
-            return text;
-        }
-        return null;
+        if (!RandomizerMod.RandomizerMod.RS.GenerationSettings.PoolSettings.Charms)
+            return null;
+
+        return this.GenerateHintText("Ooooooooooooohhhhhhh, my lovely charms should be at:", item => item is ItemChanger.Items.CharmItem);
     }
 
     #endregion
@@ -67,14 +42,10 @@ internal class CharmVictoryCondition : IVictoryCondition
 
     private bool ModHooks_SetPlayerBoolHook(string name, bool orig)
     {
-        if (name.StartsWith("gotCharm_") && orig)
+        if (name.StartsWith("gotCharm_") && orig && !PlayerData.instance.GetBool(name))
         {
-            if (!PlayerData.instance.GetBool(name))
-            {
-                CurrentAmount++;
-                LogHelper.Write("Increase charm amount");
-                ItemChangerMod.Modules.Get<VictoryModule>().CheckForFinish();
-            }
+            CurrentAmount++;
+            this.CheckForEnding();
         }
         return orig;
     }

@@ -19,28 +19,7 @@ public class RancidEggVictoryCondition : IVictoryCondition
 
     public int ClampAvailableRange(int setAmount) => Math.Min(18, Math.Max(0, setAmount));
 
-    public string GetHintText()
-    {
-        Dictionary<string, int> leftItems = [];
-        foreach (AbstractItem item in Ref.Settings.GetItems())
-        {
-            if (item.IsObtained())
-                continue;
-            if (item.name == ItemNames.Arcane_Egg)
-            {
-                string area = item.RandoLocation()?.LocationDef?.MapArea ?? "an unknown place.";
-                if (!leftItems.ContainsKey(area))
-                    leftItems.Add(area, 0);
-                leftItems[area]++;
-            }
-        }
-        if (leftItems.Count == 0)
-            return null;
-        string text = "A stench emerges from:";
-        foreach (string item in leftItems.Keys)
-            text += $"<br>{leftItems[item]} in {item}";
-        return text;
-    }
+    public string GetHintText() => this.GenerateHintText("A stench emerges from:", item => item.name == ItemNames.Rancid_Egg);
 
     public string GetMenuName() => "Rancid Eggs";
 
@@ -66,7 +45,7 @@ public class RancidEggVictoryCondition : IVictoryCondition
             if (PDHelper.RancidEggs < orig)
             {
                 CurrentAmount += orig - PDHelper.RancidEggs;
-                ItemChangerMod.Modules.Get<VictoryModule>().CheckForFinish();
+                this.CheckForEnding();
             }
         return orig;
     }
